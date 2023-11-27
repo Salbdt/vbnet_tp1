@@ -90,7 +90,7 @@ Public Class PrincipalForm
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-        Dim caja As New SiNoMensajeCaja("¿Está seguro que desea salir?", vbQuestion, "Salir de MiRedSocial")
+        Dim caja As New MensajeCaja("¿Está seguro que desea salir?", vbYesNo + vbQuestion, "Salir de MiRedSocial")
         If (caja.ShowDialog() = DialogResult.Yes) Then
             Application.Exit()
         End If

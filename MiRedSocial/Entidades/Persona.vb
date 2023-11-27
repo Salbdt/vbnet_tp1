@@ -79,4 +79,29 @@
             _telefono = value
         End Set
     End Property
+
+    Public Function ToDatatable(id As Boolean) As DataTable
+        Dim personaDatatable As New DataTable("persona")
+
+        If (id = True) Then
+            personaDatatable.Columns.Add("id_persona", System.Type.GetType("System.String"))
+            personaDatatable.Columns.Add("id_usuario", System.Type.GetType("System.String"))
+        End If
+
+        personaDatatable.Columns.Add("nombre", System.Type.GetType("System.String"))
+        personaDatatable.Columns.Add("apellido", System.Type.GetType("System.String"))
+        personaDatatable.Columns.Add("tipo_documento", System.Type.GetType("System.String"))
+        personaDatatable.Columns.Add("num_documento", System.Type.GetType("System.String"))
+        personaDatatable.Columns.Add("domicilio", System.Type.GetType("System.String"))
+        personaDatatable.Columns.Add("telefono", System.Type.GetType("System.String"))
+
+        If (id = True) Then
+            personaDatatable.Rows.Add({_idPersona, IdUsuario, _nombre, _apellido, _tipoDocumento, _numDocumento, _domicilio, _telefono})
+        Else
+            personaDatatable.Rows.Add({_nombre, _apellido, _tipoDocumento, _numDocumento, _domicilio, _telefono})
+        End If
+
+
+        Return personaDatatable
+    End Function
 End Class

@@ -22,9 +22,9 @@ Partial Class UsuariosForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ListadoDataGridView = New System.Windows.Forms.DataGridView()
         Me.TotalUsuariosLabel = New System.Windows.Forms.Label()
         Me.BuscarTextBox = New System.Windows.Forms.TextBox()
@@ -35,6 +35,9 @@ Partial Class UsuariosForm
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.ListaTabPage = New System.Windows.Forms.TabPage()
         Me.MantenimientoTabPage = New System.Windows.Forms.TabPage()
+        Me.ActualizarButton = New System.Windows.Forms.Button()
+        Me.CancelarButton = New System.Windows.Forms.Button()
+        Me.InsertarButton = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
@@ -43,7 +46,7 @@ Partial Class UsuariosForm
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ApellidoTextBox = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.NumeroDocumentoTextBox = New System.Windows.Forms.TextBox()
+        Me.NumDocumentoTextBox = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TipoDocumentoTextBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -82,38 +85,38 @@ Partial Class UsuariosForm
         Me.ListadoDataGridView.BackgroundColor = System.Drawing.Color.White
         Me.ListadoDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListadoDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.Padding = New System.Windows.Forms.Padding(3)
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.MediumTurquoise
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListadoDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumTurquoise
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListadoDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.ListadoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.Padding = New System.Windows.Forms.Padding(3)
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.MediumTurquoise
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ListadoDataGridView.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumTurquoise
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ListadoDataGridView.DefaultCellStyle = DataGridViewCellStyle5
         Me.ListadoDataGridView.Location = New System.Drawing.Point(7, 44)
         Me.ListadoDataGridView.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ListadoDataGridView.Name = "ListadoDataGridView"
         Me.ListadoDataGridView.ReadOnly = True
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(3)
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.MediumTurquoise
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListadoDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumTurquoise
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListadoDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.ListadoDataGridView.RowHeadersVisible = False
         Me.ListadoDataGridView.RowTemplate.Height = 30
         Me.ListadoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -202,10 +205,11 @@ Partial Class UsuariosForm
         Me.TabControl.Controls.Add(Me.ListaTabPage)
         Me.TabControl.Controls.Add(Me.MantenimientoTabPage)
         Me.TabControl.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabControl.Multiline = True
         Me.TabControl.Name = "TabControl"
         Me.TabControl.SelectedIndex = 0
-        Me.TabControl.Size = New System.Drawing.Size(862, 637)
+        Me.TabControl.Size = New System.Drawing.Size(862, 638)
         Me.TabControl.TabIndex = 1
         '
         'ListaTabPage
@@ -218,24 +222,65 @@ Partial Class UsuariosForm
         Me.ListaTabPage.Controls.Add(Me.EliminarButton)
         Me.ListaTabPage.Controls.Add(Me.ListadoDataGridView)
         Me.ListaTabPage.Location = New System.Drawing.Point(4, 29)
+        Me.ListaTabPage.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListaTabPage.Name = "ListaTabPage"
-        Me.ListaTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.ListaTabPage.Size = New System.Drawing.Size(854, 604)
+        Me.ListaTabPage.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ListaTabPage.Size = New System.Drawing.Size(854, 605)
         Me.ListaTabPage.TabIndex = 0
         Me.ListaTabPage.Text = "Lista"
         Me.ListaTabPage.UseVisualStyleBackColor = True
         '
         'MantenimientoTabPage
         '
+        Me.MantenimientoTabPage.Controls.Add(Me.ActualizarButton)
+        Me.MantenimientoTabPage.Controls.Add(Me.CancelarButton)
+        Me.MantenimientoTabPage.Controls.Add(Me.InsertarButton)
         Me.MantenimientoTabPage.Controls.Add(Me.GroupBox2)
         Me.MantenimientoTabPage.Controls.Add(Me.GroupBox1)
         Me.MantenimientoTabPage.Location = New System.Drawing.Point(4, 29)
+        Me.MantenimientoTabPage.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MantenimientoTabPage.Name = "MantenimientoTabPage"
-        Me.MantenimientoTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.MantenimientoTabPage.Size = New System.Drawing.Size(854, 604)
+        Me.MantenimientoTabPage.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MantenimientoTabPage.Size = New System.Drawing.Size(854, 605)
         Me.MantenimientoTabPage.TabIndex = 1
         Me.MantenimientoTabPage.Text = "Mantenimiento"
         Me.MantenimientoTabPage.UseVisualStyleBackColor = True
+        '
+        'ActualizarButton
+        '
+        Me.ActualizarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ActualizarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ActualizarButton.Location = New System.Drawing.Point(116, 570)
+        Me.ActualizarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ActualizarButton.Name = "ActualizarButton"
+        Me.ActualizarButton.Size = New System.Drawing.Size(100, 26)
+        Me.ActualizarButton.TabIndex = 4
+        Me.ActualizarButton.Text = "Actualizar"
+        Me.ActualizarButton.UseVisualStyleBackColor = True
+        '
+        'CancelarButton
+        '
+        Me.CancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CancelarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.CancelarButton.Location = New System.Drawing.Point(224, 570)
+        Me.CancelarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CancelarButton.Name = "CancelarButton"
+        Me.CancelarButton.Size = New System.Drawing.Size(100, 26)
+        Me.CancelarButton.TabIndex = 5
+        Me.CancelarButton.Text = "Cancelar"
+        Me.CancelarButton.UseVisualStyleBackColor = True
+        '
+        'InsertarButton
+        '
+        Me.InsertarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.InsertarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.InsertarButton.Location = New System.Drawing.Point(8, 570)
+        Me.InsertarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.InsertarButton.Name = "InsertarButton"
+        Me.InsertarButton.Size = New System.Drawing.Size(100, 26)
+        Me.InsertarButton.TabIndex = 3
+        Me.InsertarButton.Text = "Insertar"
+        Me.InsertarButton.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -248,15 +293,16 @@ Partial Class UsuariosForm
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.ApellidoTextBox)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.NumeroDocumentoTextBox)
+        Me.GroupBox2.Controls.Add(Me.NumDocumentoTextBox)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.TipoDocumentoTextBox)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.NombreTextBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 307)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(5)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 285)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(838, 289)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox2.Size = New System.Drawing.Size(838, 271)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Mis datos"
@@ -264,7 +310,7 @@ Partial Class UsuariosForm
         'Label11
         '
         Me.Label11.Location = New System.Drawing.Point(8, 190)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(180, 20)
         Me.Label11.TabIndex = 15
@@ -273,7 +319,8 @@ Partial Class UsuariosForm
         '
         'TelefonoTextBox
         '
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(196, 187)
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(196, 188)
+        Me.TelefonoTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
         Me.TelefonoTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.TelefonoTextBox.Size = New System.Drawing.Size(200, 26)
@@ -282,7 +329,7 @@ Partial Class UsuariosForm
         'Label6
         '
         Me.Label6.Location = New System.Drawing.Point(8, 158)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(180, 20)
         Me.Label6.TabIndex = 13
@@ -292,6 +339,7 @@ Partial Class UsuariosForm
         'DomicilioTextBox
         '
         Me.DomicilioTextBox.Location = New System.Drawing.Point(196, 155)
+        Me.DomicilioTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DomicilioTextBox.Name = "DomicilioTextBox"
         Me.DomicilioTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.DomicilioTextBox.Size = New System.Drawing.Size(200, 26)
@@ -300,7 +348,7 @@ Partial Class UsuariosForm
         'Label9
         '
         Me.Label9.Location = New System.Drawing.Point(8, 60)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(180, 20)
         Me.Label9.TabIndex = 11
@@ -309,7 +357,8 @@ Partial Class UsuariosForm
         '
         'ApellidoTextBox
         '
-        Me.ApellidoTextBox.Location = New System.Drawing.Point(196, 57)
+        Me.ApellidoTextBox.Location = New System.Drawing.Point(196, 58)
+        Me.ApellidoTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
         Me.ApellidoTextBox.Size = New System.Drawing.Size(200, 26)
         Me.ApellidoTextBox.TabIndex = 2
@@ -317,25 +366,26 @@ Partial Class UsuariosForm
         'Label7
         '
         Me.Label7.Location = New System.Drawing.Point(8, 126)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(180, 20)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Número Documento"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'NumeroDocumentoTextBox
+        'NumDocumentoTextBox
         '
-        Me.NumeroDocumentoTextBox.Location = New System.Drawing.Point(196, 123)
-        Me.NumeroDocumentoTextBox.Name = "NumeroDocumentoTextBox"
-        Me.NumeroDocumentoTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.NumeroDocumentoTextBox.Size = New System.Drawing.Size(200, 26)
-        Me.NumeroDocumentoTextBox.TabIndex = 4
+        Me.NumDocumentoTextBox.Location = New System.Drawing.Point(196, 122)
+        Me.NumDocumentoTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NumDocumentoTextBox.Name = "NumDocumentoTextBox"
+        Me.NumDocumentoTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.NumDocumentoTextBox.Size = New System.Drawing.Size(200, 26)
+        Me.NumDocumentoTextBox.TabIndex = 4
         '
         'Label8
         '
         Me.Label8.Location = New System.Drawing.Point(8, 94)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(180, 20)
         Me.Label8.TabIndex = 4
@@ -345,6 +395,7 @@ Partial Class UsuariosForm
         'TipoDocumentoTextBox
         '
         Me.TipoDocumentoTextBox.Location = New System.Drawing.Point(196, 91)
+        Me.TipoDocumentoTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TipoDocumentoTextBox.Name = "TipoDocumentoTextBox"
         Me.TipoDocumentoTextBox.Size = New System.Drawing.Size(200, 26)
         Me.TipoDocumentoTextBox.TabIndex = 3
@@ -352,7 +403,7 @@ Partial Class UsuariosForm
         'Label10
         '
         Me.Label10.Location = New System.Drawing.Point(8, 28)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(180, 20)
         Me.Label10.TabIndex = 1
@@ -362,6 +413,7 @@ Partial Class UsuariosForm
         'NombreTextBox
         '
         Me.NombreTextBox.Location = New System.Drawing.Point(196, 25)
+        Me.NombreTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.Size = New System.Drawing.Size(200, 26)
         Me.NombreTextBox.TabIndex = 1
@@ -385,9 +437,10 @@ Partial Class UsuariosForm
         Me.GroupBox1.Controls.Add(Me.NombreUsuarioTextBox)
         Me.GroupBox1.Controls.Add(Me.RolesComboBox)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 8)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(5)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(838, 289)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(838, 267)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Usuario"
@@ -409,7 +462,7 @@ Partial Class UsuariosForm
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.Location = New System.Drawing.Point(446, 28)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(120, 20)
         Me.Label5.TabIndex = 8
@@ -419,8 +472,8 @@ Partial Class UsuariosForm
         'idLabel
         '
         Me.idLabel.AutoSize = True
-        Me.idLabel.Location = New System.Drawing.Point(344, 27)
-        Me.idLabel.Margin = New System.Windows.Forms.Padding(5)
+        Me.idLabel.Location = New System.Drawing.Point(344, 28)
+        Me.idLabel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.idLabel.Name = "idLabel"
         Me.idLabel.Size = New System.Drawing.Size(26, 20)
         Me.idLabel.TabIndex = 0
@@ -431,6 +484,7 @@ Partial Class UsuariosForm
         '
         Me.AvatarTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AvatarTextBox.Location = New System.Drawing.Point(574, 25)
+        Me.AvatarTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.AvatarTextBox.Name = "AvatarTextBox"
         Me.AvatarTextBox.ReadOnly = True
         Me.AvatarTextBox.Size = New System.Drawing.Size(200, 26)
@@ -439,7 +493,8 @@ Partial Class UsuariosForm
         'AvatarPictureBox
         '
         Me.AvatarPictureBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.AvatarPictureBox.Location = New System.Drawing.Point(574, 57)
+        Me.AvatarPictureBox.Location = New System.Drawing.Point(574, 58)
+        Me.AvatarPictureBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.AvatarPictureBox.Name = "AvatarPictureBox"
         Me.AvatarPictureBox.Size = New System.Drawing.Size(200, 200)
         Me.AvatarPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -449,7 +504,7 @@ Partial Class UsuariosForm
         'Label4
         '
         Me.Label4.Location = New System.Drawing.Point(8, 190)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(120, 20)
         Me.Label4.TabIndex = 6
@@ -458,7 +513,8 @@ Partial Class UsuariosForm
         '
         'ClaveTextBox
         '
-        Me.ClaveTextBox.Location = New System.Drawing.Point(136, 187)
+        Me.ClaveTextBox.Location = New System.Drawing.Point(136, 188)
+        Me.ClaveTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ClaveTextBox.Name = "ClaveTextBox"
         Me.ClaveTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.ClaveTextBox.Size = New System.Drawing.Size(302, 26)
@@ -467,7 +523,7 @@ Partial Class UsuariosForm
         'Label3
         '
         Me.Label3.Location = New System.Drawing.Point(8, 158)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(120, 20)
         Me.Label3.TabIndex = 4
@@ -477,6 +533,7 @@ Partial Class UsuariosForm
         'EmailTextBox
         '
         Me.EmailTextBox.Location = New System.Drawing.Point(136, 155)
+        Me.EmailTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(302, 26)
         Me.EmailTextBox.TabIndex = 3
@@ -484,7 +541,7 @@ Partial Class UsuariosForm
         'Label1
         '
         Me.Label1.Location = New System.Drawing.Point(8, 28)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(120, 20)
         Me.Label1.TabIndex = 1
@@ -494,7 +551,7 @@ Partial Class UsuariosForm
         'Label2
         '
         Me.Label2.Location = New System.Drawing.Point(8, 62)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(120, 20)
         Me.Label2.TabIndex = 1
@@ -504,6 +561,7 @@ Partial Class UsuariosForm
         'NombreUsuarioTextBox
         '
         Me.NombreUsuarioTextBox.Location = New System.Drawing.Point(136, 59)
+        Me.NombreUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NombreUsuarioTextBox.Name = "NombreUsuarioTextBox"
         Me.NombreUsuarioTextBox.Size = New System.Drawing.Size(200, 26)
         Me.NombreUsuarioTextBox.TabIndex = 2
@@ -512,6 +570,7 @@ Partial Class UsuariosForm
         '
         Me.RolesComboBox.FormattingEnabled = True
         Me.RolesComboBox.Location = New System.Drawing.Point(136, 25)
+        Me.RolesComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RolesComboBox.Name = "RolesComboBox"
         Me.RolesComboBox.Size = New System.Drawing.Size(200, 28)
         Me.RolesComboBox.TabIndex = 1
@@ -570,7 +629,7 @@ Partial Class UsuariosForm
     Friend WithEvents Label9 As Label
     Friend WithEvents ApellidoTextBox As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents NumeroDocumentoTextBox As TextBox
+    Friend WithEvents NumDocumentoTextBox As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TipoDocumentoTextBox As TextBox
     Friend WithEvents Label10 As Label
@@ -579,4 +638,7 @@ Partial Class UsuariosForm
     Friend WithEvents TelefonoTextBox As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents DomicilioTextBox As TextBox
+    Friend WithEvents InsertarButton As Button
+    Friend WithEvents CancelarButton As Button
+    Friend WithEvents ActualizarButton As Button
 End Class

@@ -54,7 +54,7 @@ Public Class NUsuario
         End Try
     End Function
 
-    Public Function Insertar(obj As Usuario, persona As Persona) As Boolean
+    Public Function Insertar(obj As Usuario, persona As DataTable) As Boolean
         Try
             Dim datos As New DUsuario
             datos.Insertar(obj, persona)

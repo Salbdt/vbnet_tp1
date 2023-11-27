@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class SiNoMensajeCaja
+Partial Class MensajeCaja
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,30 +22,34 @@ Partial Class SiNoMensajeCaja
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.SiNoTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.SiButton = New System.Windows.Forms.Button()
         Me.NoButton = New System.Windows.Forms.Button()
         Me.MensajeLabel = New System.Windows.Forms.Label()
         Me.IconoPictureBox = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.OkTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.OkButton = New System.Windows.Forms.Button()
+        Me.SiNoTableLayoutPanel.SuspendLayout()
         CType(Me.IconoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.OkTableLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'SiNoTableLayoutPanel
         '
-        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.SiButton, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.NoButton, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(13, 152)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(408, 45)
-        Me.TableLayoutPanel1.TabIndex = 2
+        Me.SiNoTableLayoutPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SiNoTableLayoutPanel.ColumnCount = 2
+        Me.SiNoTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.SiNoTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.SiNoTableLayoutPanel.Controls.Add(Me.SiButton, 0, 0)
+        Me.SiNoTableLayoutPanel.Controls.Add(Me.NoButton, 1, 0)
+        Me.SiNoTableLayoutPanel.Location = New System.Drawing.Point(13, 152)
+        Me.SiNoTableLayoutPanel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.SiNoTableLayoutPanel.Name = "SiNoTableLayoutPanel"
+        Me.SiNoTableLayoutPanel.RowCount = 1
+        Me.SiNoTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.SiNoTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.SiNoTableLayoutPanel.Size = New System.Drawing.Size(408, 45)
+        Me.SiNoTableLayoutPanel.TabIndex = 2
         '
         'SiButton
         '
@@ -95,33 +99,64 @@ Partial Class SiNoMensajeCaja
         Me.IconoPictureBox.TabIndex = 2
         Me.IconoPictureBox.TabStop = False
         '
-        'SiNoMensajeCaja
+        'OkTableLayoutPanel
+        '
+        Me.OkTableLayoutPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.OkTableLayoutPanel.ColumnCount = 1
+        Me.OkTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.OkTableLayoutPanel.Controls.Add(Me.OkButton, 0, 0)
+        Me.OkTableLayoutPanel.Location = New System.Drawing.Point(13, 152)
+        Me.OkTableLayoutPanel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.OkTableLayoutPanel.Name = "OkTableLayoutPanel"
+        Me.OkTableLayoutPanel.RowCount = 1
+        Me.OkTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.OkTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.OkTableLayoutPanel.Size = New System.Drawing.Size(408, 45)
+        Me.OkTableLayoutPanel.TabIndex = 3
+        '
+        'OkButton
+        '
+        Me.OkButton.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.OkButton.DialogResult = System.Windows.Forms.DialogResult.OK
+        Me.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.OkButton.Location = New System.Drawing.Point(154, 5)
+        Me.OkButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.OkButton.Name = "OkButton"
+        Me.OkButton.Size = New System.Drawing.Size(100, 35)
+        Me.OkButton.TabIndex = 0
+        Me.OkButton.Text = "Ok"
+        '
+        'MensajeCaja
         '
         Me.AcceptButton = Me.SiButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.NoButton
         Me.ClientSize = New System.Drawing.Size(434, 211)
+        Me.Controls.Add(Me.OkTableLayoutPanel)
         Me.Controls.Add(Me.IconoPictureBox)
         Me.Controls.Add(Me.MensajeLabel)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.SiNoTableLayoutPanel)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "SiNoMensajeCaja"
+        Me.Name = "MensajeCaja"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "CajaMensaje"
-        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.SiNoTableLayoutPanel.ResumeLayout(False)
         CType(Me.IconoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.OkTableLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents SiNoTableLayoutPanel As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents SiButton As System.Windows.Forms.Button
     Friend WithEvents NoButton As System.Windows.Forms.Button
     Friend WithEvents MensajeLabel As Label
     Friend WithEvents IconoPictureBox As PictureBox
+    Friend WithEvents OkTableLayoutPanel As TableLayoutPanel
+    Friend WithEvents OkButton As Button
 End Class

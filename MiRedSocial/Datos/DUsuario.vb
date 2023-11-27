@@ -60,7 +60,7 @@ Public Class DUsuario
         End Try
     End Function
 
-    Public Sub Insertar(obj As Usuario, persona As Persona)
+    Public Sub Insertar(obj As Usuario, persona As DataTable)
         Try
             Dim comando As New SqlCommand("usuarios_insertar", MyBase.conn)
             comando.CommandType = CommandType.StoredProcedure
