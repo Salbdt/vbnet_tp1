@@ -38,6 +38,7 @@ Partial Class LoginForm
         Me.IngresarButton = New System.Windows.Forms.Button()
         Me.SalirButton = New System.Windows.Forms.Button()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -81,7 +82,7 @@ Partial Class LoginForm
         'IngresarButton
         '
         Me.IngresarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IngresarButton.Location = New System.Drawing.Point(296, 248)
+        Me.IngresarButton.Location = New System.Drawing.Point(299, 215)
         Me.IngresarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.IngresarButton.Name = "IngresarButton"
         Me.IngresarButton.Size = New System.Drawing.Size(141, 35)
@@ -92,7 +93,7 @@ Partial Class LoginForm
         '
         Me.SalirButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.SalirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SalirButton.Location = New System.Drawing.Point(450, 248)
+        Me.SalirButton.Location = New System.Drawing.Point(448, 215)
         Me.SalirButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.SalirButton.Name = "SalirButton"
         Me.SalirButton.Size = New System.Drawing.Size(141, 35)
@@ -110,6 +111,17 @@ Partial Class LoginForm
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LinkLabel1.Location = New System.Drawing.Point(299, 255)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(289, 31)
+        Me.LinkLabel1.TabIndex = 6
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Registrarse"
+        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'LoginForm
         '
         Me.AcceptButton = Me.IngresarButton
@@ -117,6 +129,7 @@ Partial Class LoginForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.SalirButton
         Me.ClientSize = New System.Drawing.Size(602, 295)
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.SalirButton)
         Me.Controls.Add(Me.IngresarButton)
         Me.Controls.Add(Me.ClaveTextBox)
@@ -139,4 +152,5 @@ Partial Class LoginForm
 
     End Sub
 
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

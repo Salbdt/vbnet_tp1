@@ -120,7 +120,7 @@ Partial Class UsuariosForm
         Me.ListadoDataGridView.RowHeadersVisible = False
         Me.ListadoDataGridView.RowTemplate.Height = 30
         Me.ListadoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ListadoDataGridView.Size = New System.Drawing.Size(840, 516)
+        Me.ListadoDataGridView.Size = New System.Drawing.Size(840, 467)
         Me.ListadoDataGridView.TabIndex = 3
         '
         'TotalUsuariosLabel
@@ -163,7 +163,7 @@ Partial Class UsuariosForm
         Me.EliminarButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.EliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.EliminarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.EliminarButton.Location = New System.Drawing.Point(223, 570)
+        Me.EliminarButton.Location = New System.Drawing.Point(223, 521)
         Me.EliminarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.EliminarButton.Name = "EliminarButton"
         Me.EliminarButton.Size = New System.Drawing.Size(100, 26)
@@ -176,7 +176,7 @@ Partial Class UsuariosForm
         Me.DesactivarButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DesactivarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DesactivarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.DesactivarButton.Location = New System.Drawing.Point(115, 570)
+        Me.DesactivarButton.Location = New System.Drawing.Point(115, 521)
         Me.DesactivarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DesactivarButton.Name = "DesactivarButton"
         Me.DesactivarButton.Size = New System.Drawing.Size(100, 26)
@@ -189,7 +189,7 @@ Partial Class UsuariosForm
         Me.ActivarButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ActivarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ActivarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ActivarButton.Location = New System.Drawing.Point(7, 570)
+        Me.ActivarButton.Location = New System.Drawing.Point(7, 521)
         Me.ActivarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ActivarButton.Name = "ActivarButton"
         Me.ActivarButton.Size = New System.Drawing.Size(100, 26)
@@ -243,7 +243,7 @@ Partial Class UsuariosForm
         Me.MantenimientoTabPage.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MantenimientoTabPage.Size = New System.Drawing.Size(854, 554)
         Me.MantenimientoTabPage.TabIndex = 1
-        Me.MantenimientoTabPage.Text = "Mantenimiento"
+        Me.MantenimientoTabPage.Text = "Ingresar"
         Me.MantenimientoTabPage.UseVisualStyleBackColor = True
         '
         'ActualizarButton

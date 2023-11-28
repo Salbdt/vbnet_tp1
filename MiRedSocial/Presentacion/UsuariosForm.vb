@@ -4,6 +4,16 @@ Imports Entidades
 Public Class UsuariosForm
     Private rutaOrigen As String
     Private rutaDestino As String
+    Private esAdministrador As Boolean
+
+    Public Sub New(esAdministrador As Boolean)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Me.esAdministrador = esAdministrador
+    End Sub
 
     Private Sub Formato()
         ListadoDataGridView.Columns(0).Name = "idRol"
@@ -56,7 +66,8 @@ Public Class UsuariosForm
         End Try
     End Sub
 
-    Private Sub Limpiar()
+    Public Sub Limpiar()
+        MantenimientoTabPage.Text = "Ingresar"
         InsertarButton.Visible = True
         ActualizarButton.Visible = False
         RolesComboBox.SelectedIndex = 0
@@ -76,7 +87,11 @@ Public Class UsuariosForm
     Private Sub CargarRoles()
         Try
             Dim neg As New Negocio.NRol
-            RolesComboBox.DataSource = neg.Listar()
+            If (esAdministrador = True) Then
+                RolesComboBox.DataSource = neg.Listar()
+            Else
+                RolesComboBox.DataSource = neg.ListarRegistro()
+            End If
             RolesComboBox.ValueMember = "id_rol"
             RolesComboBox.DisplayMember = "nombre"
         Catch ex As Exception
@@ -86,7 +101,11 @@ Public Class UsuariosForm
 
     Private Sub UsuariosForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CargarRoles()
-        Me.Listar()
+        If (esAdministrador = True) Then
+            Me.Listar()
+        Else
+            Me.Limpiar()
+        End If
     End Sub
 
     Private Sub BuscarButton_Click(sender As Object, e As EventArgs) Handles BuscarButton.Click
@@ -177,7 +196,12 @@ Public Class UsuariosForm
                 If (neg.Insertar(usuario, persona.ToDatatable(False))) Then
                     caja = New MensajeCaja("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro correcto")
                     caja.ShowDialog()
-                    Me.Listar()
+                    If (esAdministrador = True) Then
+                        Me.Listar()
+                    Else
+                        Me.Limpiar()
+                        Me.Close()
+                    End If
                 Else
                     caja = New MensajeCaja("No se ha podido registgrar", vbOKOnly + vbCritical, "Registro incorrecto")
                     caja.ShowDialog()
@@ -198,7 +222,11 @@ Public Class UsuariosForm
 
     Private Sub CancelarButton_Click(sender As Object, e As EventArgs) Handles CancelarButton.Click
         Me.Limpiar()
-        TabControl.SelectedIndex = 0
+        If (esAdministrador = True) Then
+            TabControl.SelectedIndex = 0
+        Else
+            Me.Close()
+        End if
     End Sub
 
     Private Sub ListadoDataGridView_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles ListadoDataGridView.CellDoubleClick
@@ -219,6 +247,9 @@ Public Class UsuariosForm
         'NumDocumentoTextBox.Text
         'DomicilioTextBox.Text
         'TelefonoTextBox.Text
+        MantenimientoTabPage.Text = "Actualizar"
+        InsertarButton.Visible = False
+        ActualizarButton.Visible = True
         TabControl.SelectedIndex = 1
     End Sub
 End Class

@@ -1,4 +1,10 @@
 Public Class LoginForm
+
+    Private Sub Limpiar()
+        EmailTextBox.Text = ""
+        ClaveTextBox.Text = ""
+    End Sub
+
     Private Sub IngresarButton_Click(sender As Object, e As EventArgs) Handles IngresarButton.Click
         Try
             Dim caja As MensajeCaja
@@ -25,9 +31,17 @@ Public Class LoginForm
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        Limpiar()
     End Sub
 
     Private Sub SalirButton_Click(sender As Object, e As EventArgs) Handles SalirButton.Click
         Application.Exit()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Dim usuariosForm As New UsuariosForm(False)
+        usuariosForm.TabControl.TabPages.Remove(usuariosForm.ListaTabPage)
+        usuariosForm.ShowDialog()
+        Limpiar()
     End Sub
 End Class
