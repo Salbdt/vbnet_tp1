@@ -49,21 +49,21 @@ Partial Class UsuarioForm
         Me.ElegirAvatarButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ElegirAvatarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ElegirAvatarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ElegirAvatarButton.Location = New System.Drawing.Point(1104, 22)
+        Me.ElegirAvatarButton.Location = New System.Drawing.Point(821, 22)
         Me.ElegirAvatarButton.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.ElegirAvatarButton.Name = "ElegirAvatarButton"
-        Me.ElegirAvatarButton.Size = New System.Drawing.Size(75, 40)
-        Me.ElegirAvatarButton.TabIndex = 30
+        Me.ElegirAvatarButton.Size = New System.Drawing.Size(50, 26)
+        Me.ElegirAvatarButton.TabIndex = 7
         Me.ElegirAvatarButton.Text = "..."
         Me.ElegirAvatarButton.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.Location = New System.Drawing.Point(602, 26)
+        Me.Label5.Location = New System.Drawing.Point(478, 25)
         Me.Label5.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(180, 31)
+        Me.Label5.Size = New System.Drawing.Size(120, 20)
         Me.Label5.TabIndex = 34
         Me.Label5.Text = "Avatar"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -71,7 +71,7 @@ Partial Class UsuarioForm
         'idLabel
         '
         Me.idLabel.AutoSize = True
-        Me.idLabel.Location = New System.Drawing.Point(513, 22)
+        Me.idLabel.Location = New System.Drawing.Point(355, 19)
         Me.idLabel.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.idLabel.Name = "idLabel"
         Me.idLabel.Size = New System.Drawing.Size(26, 20)
@@ -82,108 +82,108 @@ Partial Class UsuarioForm
         'AvatarTextBox
         '
         Me.AvatarTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.AvatarTextBox.Location = New System.Drawing.Point(794, 22)
+        Me.AvatarTextBox.Location = New System.Drawing.Point(611, 22)
         Me.AvatarTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.AvatarTextBox.Name = "AvatarTextBox"
         Me.AvatarTextBox.ReadOnly = True
-        Me.AvatarTextBox.Size = New System.Drawing.Size(298, 26)
-        Me.AvatarTextBox.TabIndex = 32
+        Me.AvatarTextBox.Size = New System.Drawing.Size(200, 26)
+        Me.AvatarTextBox.TabIndex = 8
         '
         'AvatarPictureBox
         '
         Me.AvatarPictureBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.AvatarPictureBox.Location = New System.Drawing.Point(794, 72)
+        Me.AvatarPictureBox.Location = New System.Drawing.Point(611, 54)
         Me.AvatarPictureBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.AvatarPictureBox.Name = "AvatarPictureBox"
-        Me.AvatarPictureBox.Size = New System.Drawing.Size(300, 308)
+        Me.AvatarPictureBox.Size = New System.Drawing.Size(200, 200)
         Me.AvatarPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.AvatarPictureBox.TabIndex = 31
         Me.AvatarPictureBox.TabStop = False
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(15, 277)
+        Me.Label4.Location = New System.Drawing.Point(15, 213)
         Me.Label4.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(180, 31)
+        Me.Label4.Size = New System.Drawing.Size(120, 20)
         Me.Label4.TabIndex = 33
         Me.Label4.Text = "Clave (*)"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ClaveTextBox
         '
-        Me.ClaveTextBox.Location = New System.Drawing.Point(205, 279)
+        Me.ClaveTextBox.Location = New System.Drawing.Point(145, 210)
         Me.ClaveTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.ClaveTextBox.Name = "ClaveTextBox"
         Me.ClaveTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.ClaveTextBox.Size = New System.Drawing.Size(451, 26)
-        Me.ClaveTextBox.TabIndex = 28
+        Me.ClaveTextBox.Size = New System.Drawing.Size(300, 26)
+        Me.ClaveTextBox.TabIndex = 5
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(15, 213)
+        Me.Label3.Location = New System.Drawing.Point(15, 149)
         Me.Label3.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(180, 31)
+        Me.Label3.Size = New System.Drawing.Size(120, 20)
         Me.Label3.TabIndex = 29
         Me.Label3.Text = "Email (*)"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'EmailTextBox
         '
-        Me.EmailTextBox.Location = New System.Drawing.Point(205, 215)
+        Me.EmailTextBox.Location = New System.Drawing.Point(145, 146)
         Me.EmailTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(451, 26)
-        Me.EmailTextBox.TabIndex = 27
+        Me.EmailTextBox.Size = New System.Drawing.Size(300, 26)
+        Me.EmailTextBox.TabIndex = 3
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(15, 14)
+        Me.Label1.Location = New System.Drawing.Point(15, 19)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(180, 31)
+        Me.Label1.Size = New System.Drawing.Size(120, 20)
         Me.Label1.TabIndex = 23
         Me.Label1.Text = "Rol (*)"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(15, 48)
+        Me.Label2.Location = New System.Drawing.Point(15, 53)
         Me.Label2.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(180, 31)
+        Me.Label2.Size = New System.Drawing.Size(120, 20)
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "Nombre (*)"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'NombreUsuarioTextBox
         '
-        Me.NombreUsuarioTextBox.Location = New System.Drawing.Point(205, 50)
+        Me.NombreUsuarioTextBox.Location = New System.Drawing.Point(145, 50)
         Me.NombreUsuarioTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NombreUsuarioTextBox.Name = "NombreUsuarioTextBox"
-        Me.NombreUsuarioTextBox.Size = New System.Drawing.Size(298, 26)
-        Me.NombreUsuarioTextBox.TabIndex = 26
+        Me.NombreUsuarioTextBox.Size = New System.Drawing.Size(200, 26)
+        Me.NombreUsuarioTextBox.TabIndex = 2
         '
         'RolesComboBox
         '
         Me.RolesComboBox.FormattingEnabled = True
-        Me.RolesComboBox.Location = New System.Drawing.Point(205, 16)
+        Me.RolesComboBox.Location = New System.Drawing.Point(145, 16)
         Me.RolesComboBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.RolesComboBox.Name = "RolesComboBox"
-        Me.RolesComboBox.Size = New System.Drawing.Size(298, 28)
-        Me.RolesComboBox.TabIndex = 25
+        Me.RolesComboBox.Size = New System.Drawing.Size(200, 28)
+        Me.RolesComboBox.TabIndex = 1
         '
         'ActualizarButton
         '
         Me.ActualizarButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ActualizarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ActualizarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ActualizarButton.Location = New System.Drawing.Point(15, 405)
+        Me.ActualizarButton.Location = New System.Drawing.Point(659, 279)
         Me.ActualizarButton.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.ActualizarButton.Name = "ActualizarButton"
-        Me.ActualizarButton.Size = New System.Drawing.Size(150, 40)
-        Me.ActualizarButton.TabIndex = 35
+        Me.ActualizarButton.Size = New System.Drawing.Size(100, 26)
+        Me.ActualizarButton.TabIndex = 9
         Me.ActualizarButton.Text = "Actualizar"
         Me.ActualizarButton.UseVisualStyleBackColor = True
         '
@@ -192,56 +192,56 @@ Partial Class UsuarioForm
         Me.CancelarButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.CancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CancelarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.CancelarButton.Location = New System.Drawing.Point(177, 405)
+        Me.CancelarButton.Location = New System.Drawing.Point(771, 279)
         Me.CancelarButton.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.CancelarButton.Name = "CancelarButton"
-        Me.CancelarButton.Size = New System.Drawing.Size(150, 40)
-        Me.CancelarButton.TabIndex = 36
+        Me.CancelarButton.Size = New System.Drawing.Size(100, 26)
+        Me.CancelarButton.TabIndex = 10
         Me.CancelarButton.Text = "Cancelar"
         Me.CancelarButton.UseVisualStyleBackColor = True
         '
         'Label6
         '
-        Me.Label6.Location = New System.Drawing.Point(15, 309)
+        Me.Label6.Location = New System.Drawing.Point(15, 245)
         Me.Label6.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(180, 31)
+        Me.Label6.Size = New System.Drawing.Size(120, 20)
         Me.Label6.TabIndex = 38
         Me.Label6.Text = "Nueva clave"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ClaveNuevaTextBox
         '
-        Me.ClaveNuevaTextBox.Location = New System.Drawing.Point(205, 311)
+        Me.ClaveNuevaTextBox.Location = New System.Drawing.Point(145, 242)
         Me.ClaveNuevaTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.ClaveNuevaTextBox.Name = "ClaveNuevaTextBox"
         Me.ClaveNuevaTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.ClaveNuevaTextBox.Size = New System.Drawing.Size(451, 26)
-        Me.ClaveNuevaTextBox.TabIndex = 37
+        Me.ClaveNuevaTextBox.Size = New System.Drawing.Size(300, 26)
+        Me.ClaveNuevaTextBox.TabIndex = 6
         '
         'Label7
         '
-        Me.Label7.Location = New System.Drawing.Point(15, 245)
+        Me.Label7.Location = New System.Drawing.Point(15, 181)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(180, 31)
+        Me.Label7.Size = New System.Drawing.Size(120, 20)
         Me.Label7.TabIndex = 40
         Me.Label7.Text = "Nuevo email"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'EmailNuevoTextBox
         '
-        Me.EmailNuevoTextBox.Location = New System.Drawing.Point(205, 247)
+        Me.EmailNuevoTextBox.Location = New System.Drawing.Point(145, 178)
         Me.EmailNuevoTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.EmailNuevoTextBox.Name = "EmailNuevoTextBox"
-        Me.EmailNuevoTextBox.Size = New System.Drawing.Size(451, 26)
-        Me.EmailNuevoTextBox.TabIndex = 39
+        Me.EmailNuevoTextBox.Size = New System.Drawing.Size(300, 26)
+        Me.EmailNuevoTextBox.TabIndex = 4
         '
         'UsuarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1198, 462)
+        Me.ClientSize = New System.Drawing.Size(886, 322)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.EmailNuevoTextBox)
         Me.Controls.Add(Me.Label6)

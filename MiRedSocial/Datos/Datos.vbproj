@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.vb" />
+    <Compile Include="DPersona.vb" />
     <Compile Include="DRol.vb" />
     <Compile Include="DUsuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

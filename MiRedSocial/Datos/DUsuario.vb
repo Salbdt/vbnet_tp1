@@ -4,7 +4,7 @@ Imports Entidades
 Public Class DUsuario
     Inherits Conexion
 
-    ' Listar, Buscar
+    ' Listar, Buscar, Obtener
     ' Login
     ' Insertar, Actualizar
     ' Eliminar, Desactivar, Activar

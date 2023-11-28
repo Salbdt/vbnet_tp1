@@ -86,6 +86,7 @@ Public Class PrincipalForm
 
     Private Sub PrincipalForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         EstadoToolStrip.Text = "Usuario actual: " & _usuario.NombreUsuario
+        UsuarioToolStripMenuItem.Text = _usuario.NombreUsuario
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
@@ -111,7 +112,7 @@ Public Class PrincipalForm
         Application.Exit()
     End Sub
 
-    Private Sub ConfiguracionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguracionToolStripMenuItem.Click
+    Private Sub ConfiguracionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MiPerfilToolStripMenuItem.Click
         Dim usuarioForm As New UsuarioForm(_usuario.IdUsuario)
         usuarioForm.MdiParent = Me
         usuarioForm.Show()

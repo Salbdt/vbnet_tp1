@@ -27,7 +27,7 @@ Partial Class PrincipalForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PrincipalForm))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfiguracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MiPerfilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DatosPersonalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccesosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RolesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -74,20 +74,22 @@ Partial Class PrincipalForm
         '
         'UsuarioToolStripMenuItem
         '
-        Me.UsuarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfiguracionToolStripMenuItem, Me.DatosPersonalesToolStripMenuItem})
-        Me.UsuarioToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsuarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MiPerfilToolStripMenuItem, Me.DatosPersonalesToolStripMenuItem})
+        Me.UsuarioToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
-        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(76, 25)
+        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(81, 25)
         Me.UsuarioToolStripMenuItem.Text = "Usuario"
         '
-        'ConfiguracionToolStripMenuItem
+        'MiPerfilToolStripMenuItem
         '
-        Me.ConfiguracionToolStripMenuItem.Name = "ConfiguracionToolStripMenuItem"
-        Me.ConfiguracionToolStripMenuItem.Size = New System.Drawing.Size(206, 26)
-        Me.ConfiguracionToolStripMenuItem.Text = "Configuración"
+        Me.MiPerfilToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MiPerfilToolStripMenuItem.Name = "MiPerfilToolStripMenuItem"
+        Me.MiPerfilToolStripMenuItem.Size = New System.Drawing.Size(206, 26)
+        Me.MiPerfilToolStripMenuItem.Text = "Mi Perfil"
         '
         'DatosPersonalesToolStripMenuItem
         '
+        Me.DatosPersonalesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DatosPersonalesToolStripMenuItem.Name = "DatosPersonalesToolStripMenuItem"
         Me.DatosPersonalesToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
         Me.DatosPersonalesToolStripMenuItem.Size = New System.Drawing.Size(206, 26)
@@ -104,19 +106,19 @@ Partial Class PrincipalForm
         'RolesToolStripMenuItem
         '
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.RolesToolStripMenuItem.Text = "Roles"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'PersonasToolStripMenuItem
         '
         Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
-        Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
+        Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.PersonasToolStripMenuItem.Text = "Personas"
         '
         'SocialToolStripMenuItem
@@ -331,7 +333,7 @@ Partial Class PrincipalForm
     Friend WithEvents RolesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuarioToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ConfiguracionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MiPerfilToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DatosPersonalesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PersonasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem

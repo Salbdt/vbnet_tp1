@@ -1,5 +1,7 @@
 ﻿Public Class UsuarioForm
     Private idUsuario As Integer
+    Private rutaOrigen As String
+    Private rutaDestino As String
 
     Public Sub New(id As Integer)
 
@@ -8,6 +10,12 @@
 
         ' Add any initialization after the InitializeComponent() call.
         idUsuario = id
+    End Sub
+
+    Public Sub Limpiar()
+        EmailNuevoTextBox.Text = ""
+        ClaveTextBox.Text = ""
+        ClaveNuevaTextBox.Text = ""
     End Sub
 
     Private Sub Obtener(id As Integer)
@@ -29,6 +37,7 @@
                     MsgBox(ex.Message)
                 End Try
                 EmailTextBox.Text = usuario.Email
+                Me.Limpiar()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
