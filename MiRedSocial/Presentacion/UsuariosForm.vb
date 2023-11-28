@@ -4,7 +4,6 @@ Imports Entidades
 Public Class UsuariosForm
     Private rutaOrigen As String
     Private rutaDestino As String
-    Private directorio As String = "C:\Proyecto\vbnet_tp1\img\"
 
     Private Sub Formato()
         ListadoDataGridView.Columns(0).Name = "idRol"
@@ -208,7 +207,7 @@ Public Class UsuariosForm
         NombreUsuarioTextBox.Text = ListadoDataGridView.SelectedCells.Item(4).Value
         AvatarTextBox.Text = ListadoDataGridView.SelectedCells.Item(5).Value
         Try
-            AvatarPictureBox.Image = Image.FromFile(directorio & ListadoDataGridView.SelectedCells.Item(5).Value)
+            AvatarPictureBox.Image = Image.FromFile(Variables.directorioImagen & ListadoDataGridView.SelectedCells.Item(5).Value)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

@@ -47,7 +47,7 @@ Partial Class MensajeCaja
         Me.SiNoTableLayoutPanel.Name = "SiNoTableLayoutPanel"
         Me.SiNoTableLayoutPanel.RowCount = 1
         Me.SiNoTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.SiNoTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.SiNoTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45.0!))
         Me.SiNoTableLayoutPanel.Size = New System.Drawing.Size(408, 45)
         Me.SiNoTableLayoutPanel.TabIndex = 2
         '
@@ -129,6 +129,7 @@ Partial Class MensajeCaja
         'MensajeCaja
         '
         Me.AcceptButton = Me.SiButton
+        Me.AccessibleRole = System.Windows.Forms.AccessibleRole.Alert
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.NoButton

@@ -215,6 +215,7 @@ Partial Class UsuarioForm
         Me.Controls.Add(Me.NombreUsuarioTextBox)
         Me.Controls.Add(Me.RolesComboBox)
         Me.Name = "UsuarioForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "UsuarioForm"
         CType(Me.AvatarPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

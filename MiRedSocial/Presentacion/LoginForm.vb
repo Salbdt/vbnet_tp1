@@ -17,6 +17,7 @@ Public Class LoginForm
                     caja = New MensajeCaja("El usuario está bloqueado", vbOKOnly + vbCritical, "Usuario inhabilitado")
                     caja.ShowDialog()
                 Else
+                    PrincipalForm.Usuario = usuario
                     Me.Hide()
                     PrincipalForm.Show()
                 End If

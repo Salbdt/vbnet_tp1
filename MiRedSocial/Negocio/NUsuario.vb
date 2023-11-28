@@ -27,6 +27,33 @@ Public Class NUsuario
         End Try
     End Function
 
+    Public Function Obtener(id As Integer) As Usuario
+        Try
+            Dim usuario As New Usuario
+            Dim datos As New DUsuario
+            Dim tabla As New DataTable
+            tabla = datos.Obtener(id)
+
+            If (tabla.Rows.Count > 0) Then
+                usuario.Rol = New Rol
+                usuario.Rol.IdRol = tabla.Rows(0).Item(0).ToString
+                usuario.Rol.Nombre = tabla.Rows(0).Item(1).ToString
+                usuario.Rol.Estado = tabla.Rows(0).Item(2).ToString
+                usuario.IdUsuario = tabla.Rows(0).Item(3).ToString
+                usuario.NombreUsuario = tabla.Rows(0).Item(4).ToString
+                usuario.Avatar = tabla.Rows(0).Item(5).ToString
+                usuario.Email = tabla.Rows(0).Item(6).ToString
+                usuario.Estado = tabla.Rows(0).Item(7).ToString
+                Return usuario
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function Login(email As String, clave As String) As Usuario
         Try
             Dim usuario As New Usuario

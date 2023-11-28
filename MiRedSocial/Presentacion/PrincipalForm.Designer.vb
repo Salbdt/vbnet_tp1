@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PrincipalForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@ Partial Class PrincipalForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PrincipalForm))
@@ -255,6 +255,7 @@ Partial Class PrincipalForm
         '
         'ToolStrip
         '
+        Me.ToolStrip.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStrip.Location = New System.Drawing.Point(0, 31)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
@@ -264,18 +265,19 @@ Partial Class PrincipalForm
         '
         'StatusStrip
         '
+        Me.StatusStrip.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EstadoToolStrip})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 552)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 548)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Padding = New System.Windows.Forms.Padding(2, 0, 21, 0)
-        Me.StatusStrip.Size = New System.Drawing.Size(1178, 22)
+        Me.StatusStrip.Size = New System.Drawing.Size(1178, 26)
         Me.StatusStrip.TabIndex = 3
         Me.StatusStrip.Text = "StatusStrip"
         '
         'EstadoToolStrip
         '
         Me.EstadoToolStrip.Name = "EstadoToolStrip"
-        Me.EstadoToolStrip.Size = New System.Drawing.Size(97, 17)
+        Me.EstadoToolStrip.Size = New System.Drawing.Size(125, 21)
         Me.EstadoToolStrip.Text = "Usuario actual: ..."
         '
         'PrincipalForm

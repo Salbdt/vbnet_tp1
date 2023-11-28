@@ -42,6 +42,23 @@ Public Class DUsuario
         End Try
     End Function
 
+    Public Function Obtener(id As Integer) As DataTable
+        Try
+            Dim resultado As SqlDataReader
+            Dim tabla As New DataTable
+            Dim comando As New SqlCommand("usuarios_obtener", MyBase.conn)
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Parameters.Add("@id_usuario", SqlDbType.VarChar).Value = id
+            MyBase.conn.Open()
+            resultado = comando.ExecuteReader()
+            tabla.Load(resultado)
+            MyBase.conn.Close()
+            Return tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function Login(email As String, clave As String) As DataTable
         Try
             Dim resultado As SqlDataReader

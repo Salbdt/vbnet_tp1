@@ -2,6 +2,9 @@
 
 Public Class PrincipalForm
 
+    Private m_ChildFormNumber As Integer
+    Private _usuario As Entidades.Usuario
+
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         ' Create a new instance of the child form.
         Dim ChildForm As New System.Windows.Forms.Form
@@ -14,16 +17,6 @@ Public Class PrincipalForm
         ChildForm.Show()
     End Sub
 
-    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs)
-        Dim OpenFileDialog As New OpenFileDialog
-        OpenFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
-        OpenFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
-        If (OpenFileDialog.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK) Then
-            Dim FileName As String = OpenFileDialog.FileName
-            ' TODO: Add code here to open the file.
-        End If
-    End Sub
-
     Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim SaveFileDialog As New SaveFileDialog
         SaveFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
@@ -34,7 +27,6 @@ Public Class PrincipalForm
             ' TODO: Add code here to save the current contents of the form to a file.
         End If
     End Sub
-
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.Close()
@@ -83,10 +75,17 @@ Public Class PrincipalForm
         Next
     End Sub
 
-    Private m_ChildFormNumber As Integer
+    Public Property Usuario As Entidades.Usuario
+        Get
+            Return _usuario
+        End Get
+        Set(value As Entidades.Usuario)
+            _usuario = value
+        End Set
+    End Property
 
     Private Sub PrincipalForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        EstadoToolStrip.Text = "Usuario actual: " & _usuario.NombreUsuario
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
@@ -106,5 +105,15 @@ Public Class PrincipalForm
         Dim usuariosForm As New UsuariosForm
         usuariosForm.MdiParent = Me
         usuariosForm.Show()
+    End Sub
+
+    Private Sub PrincipalForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
+
+    Private Sub ConfiguracionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguracionToolStripMenuItem.Click
+        Dim usuarioForm As New UsuarioForm(_usuario.IdUsuario)
+        usuarioForm.MdiParent = Me
+        usuarioForm.Show()
     End Sub
 End Class
