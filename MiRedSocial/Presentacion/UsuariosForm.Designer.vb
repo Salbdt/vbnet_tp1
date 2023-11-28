@@ -225,7 +225,7 @@ Partial Class UsuariosForm
         Me.ListaTabPage.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListaTabPage.Name = "ListaTabPage"
         Me.ListaTabPage.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ListaTabPage.Size = New System.Drawing.Size(854, 605)
+        Me.ListaTabPage.Size = New System.Drawing.Size(854, 554)
         Me.ListaTabPage.TabIndex = 0
         Me.ListaTabPage.Text = "Lista"
         Me.ListaTabPage.UseVisualStyleBackColor = True
@@ -472,7 +472,7 @@ Partial Class UsuariosForm
         'idLabel
         '
         Me.idLabel.AutoSize = True
-        Me.idLabel.Location = New System.Drawing.Point(344, 28)
+        Me.idLabel.Location = New System.Drawing.Point(341, 28)
         Me.idLabel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.idLabel.Name = "idLabel"
         Me.idLabel.Size = New System.Drawing.Size(26, 20)
@@ -503,7 +503,7 @@ Partial Class UsuariosForm
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(8, 190)
+        Me.Label4.Location = New System.Drawing.Point(7, 188)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(120, 20)
@@ -513,7 +513,7 @@ Partial Class UsuariosForm
         '
         'ClaveTextBox
         '
-        Me.ClaveTextBox.Location = New System.Drawing.Point(136, 188)
+        Me.ClaveTextBox.Location = New System.Drawing.Point(134, 185)
         Me.ClaveTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ClaveTextBox.Name = "ClaveTextBox"
         Me.ClaveTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
@@ -522,7 +522,7 @@ Partial Class UsuariosForm
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(8, 158)
+        Me.Label3.Location = New System.Drawing.Point(7, 158)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(120, 20)
@@ -532,7 +532,7 @@ Partial Class UsuariosForm
         '
         'EmailTextBox
         '
-        Me.EmailTextBox.Location = New System.Drawing.Point(136, 155)
+        Me.EmailTextBox.Location = New System.Drawing.Point(134, 155)
         Me.EmailTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(302, 26)
@@ -540,7 +540,7 @@ Partial Class UsuariosForm
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(8, 28)
+        Me.Label1.Location = New System.Drawing.Point(7, 28)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(120, 20)
@@ -550,7 +550,7 @@ Partial Class UsuariosForm
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(8, 62)
+        Me.Label2.Location = New System.Drawing.Point(7, 62)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(120, 20)
@@ -560,7 +560,7 @@ Partial Class UsuariosForm
         '
         'NombreUsuarioTextBox
         '
-        Me.NombreUsuarioTextBox.Location = New System.Drawing.Point(136, 59)
+        Me.NombreUsuarioTextBox.Location = New System.Drawing.Point(134, 59)
         Me.NombreUsuarioTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NombreUsuarioTextBox.Name = "NombreUsuarioTextBox"
         Me.NombreUsuarioTextBox.Size = New System.Drawing.Size(200, 26)
@@ -569,7 +569,7 @@ Partial Class UsuariosForm
         'RolesComboBox
         '
         Me.RolesComboBox.FormattingEnabled = True
-        Me.RolesComboBox.Location = New System.Drawing.Point(136, 25)
+        Me.RolesComboBox.Location = New System.Drawing.Point(134, 24)
         Me.RolesComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RolesComboBox.Name = "RolesComboBox"
         Me.RolesComboBox.Size = New System.Drawing.Size(200, 28)

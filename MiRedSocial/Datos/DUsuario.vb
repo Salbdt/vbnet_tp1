@@ -97,23 +97,29 @@ Public Class DUsuario
         End Try
     End Sub
 
-    Public Sub Actualizar(Obj As Usuario)
+    Public Function Actualizar(Obj As Usuario, emailNuevo As String, claveNueva As String) As DataTable
         Try
+            Dim resultado As SqlDataReader
+            Dim tabla As New DataTable
             Dim comando As New SqlCommand("usuarios_actualizar", MyBase.conn)
             comando.CommandType = CommandType.StoredProcedure
             comando.Parameters.Add("@id_usuario", SqlDbType.Int).Value = Obj.IdUsuario
             comando.Parameters.Add("@id_rol", SqlDbType.Int).Value = Obj.Rol.IdRol
             comando.Parameters.Add("@nombre_usuario", SqlDbType.VarChar).Value = Obj.NombreUsuario
             comando.Parameters.Add("@email", SqlDbType.VarChar).Value = Obj.Email
+            comando.Parameters.Add("@email_nuevo", SqlDbType.VarChar).Value = emailNuevo
             comando.Parameters.Add("@avatar", SqlDbType.VarChar).Value = Obj.Avatar
             comando.Parameters.Add("@clave", SqlDbType.VarChar).Value = Obj.Clave
+            comando.Parameters.Add("@clave_nueva", SqlDbType.VarChar).Value = claveNueva
             MyBase.conn.Open()
-            comando.ExecuteNonQuery()
+            resultado = comando.ExecuteReader()
+            tabla.Load(resultado)
             MyBase.conn.Close()
+            Return tabla
         Catch ex As Exception
             Throw ex
         End Try
-    End Sub
+    End Function
 
     Public Sub Eliminar(id As Integer)
         Try

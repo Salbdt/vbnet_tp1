@@ -50,4 +50,48 @@
         Me.CargarRoles()
         Me.Obtener(idUsuario)
     End Sub
+
+    Private Sub CancelarButton_Click(sender As Object, e As EventArgs) Handles CancelarButton.Click
+        Me.Close()
+    End Sub
+
+    Private Sub ActualizarButton_Click(sender As Object, e As EventArgs) Handles ActualizarButton.Click
+        Try
+            Dim caja As MensajeCaja
+            If (RolesComboBox.Text <> "") And (NombreUsuarioTextBox.Text <> "") And (EmailTextBox.Text <> "") And
+                (ClaveTextBox.Text <> "") Then
+
+                Dim usuario As New Entidades.Usuario
+                Dim neg As New Negocio.NUsuario
+                Dim emailNuevo, claveNueva As String
+
+                usuario.IdUsuario = idLabel.Text
+                usuario.Rol = New Entidades.Rol
+                usuario.Rol.IdRol = RolesComboBox.SelectedValue
+                usuario.NombreUsuario = NombreUsuarioTextBox.Text
+                usuario.Email = EmailTextBox.Text
+                usuario.Avatar = AvatarTextBox.Text
+                usuario.Clave = ClaveTextBox.Text
+
+                emailNuevo = EmailNuevoTextBox.Text
+                claveNueva = ClaveNuevaTextBox.Text
+
+
+                If (neg.Actualizar(usuario, emailNuevo, claveNueva)) Then
+                    caja = New MensajeCaja("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
+                    caja.ShowDialog()
+                    Me.Obtener(usuario.IdUsuario)
+                Else
+                    caja = New MensajeCaja("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización incorrecta")
+                    caja.ShowDialog()
+                End If
+            Else
+                caja = New MensajeCaja("Rellene todos los campos obligatorios", vbOKOnly + vbInformation, "Campos incompletos")
+                caja.ShowDialog()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
