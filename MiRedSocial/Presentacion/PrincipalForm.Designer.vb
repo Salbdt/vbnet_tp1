@@ -104,19 +104,19 @@ Partial Class PrincipalForm
         'RolesToolStripMenuItem
         '
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
         Me.RolesToolStripMenuItem.Text = "Roles"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'PersonasToolStripMenuItem
         '
         Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
-        Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
         Me.PersonasToolStripMenuItem.Text = "Personas"
         '
         'SocialToolStripMenuItem

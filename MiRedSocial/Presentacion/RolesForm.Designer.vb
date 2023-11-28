@@ -34,7 +34,7 @@ Partial Class RolesForm
         '
         Me.TotalRolesLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TotalRolesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TotalRolesLabel.Location = New System.Drawing.Point(378, 617)
+        Me.TotalRolesLabel.Location = New System.Drawing.Point(378, 566)
         Me.TotalRolesLabel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 0)
         Me.TotalRolesLabel.Name = "TotalRolesLabel"
         Me.TotalRolesLabel.Size = New System.Drawing.Size(180, 31)
@@ -87,7 +87,7 @@ Partial Class RolesForm
         Me.ListadoDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.ListadoDataGridView.RowHeadersVisible = False
         Me.ListadoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ListadoDataGridView.Size = New System.Drawing.Size(540, 589)
+        Me.ListadoDataGridView.Size = New System.Drawing.Size(540, 538)
         Me.ListadoDataGridView.TabIndex = 1
         '
         'RolesForm
@@ -95,7 +95,7 @@ Partial Class RolesForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(576, 661)
+        Me.ClientSize = New System.Drawing.Size(576, 610)
         Me.Controls.Add(Me.ListadoDataGridView)
         Me.Controls.Add(Me.TotalRolesLabel)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)

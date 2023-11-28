@@ -209,7 +209,7 @@ Partial Class UsuariosForm
         Me.TabControl.Multiline = True
         Me.TabControl.Name = "TabControl"
         Me.TabControl.SelectedIndex = 0
-        Me.TabControl.Size = New System.Drawing.Size(862, 638)
+        Me.TabControl.Size = New System.Drawing.Size(862, 587)
         Me.TabControl.TabIndex = 1
         '
         'ListaTabPage
@@ -241,7 +241,7 @@ Partial Class UsuariosForm
         Me.MantenimientoTabPage.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MantenimientoTabPage.Name = "MantenimientoTabPage"
         Me.MantenimientoTabPage.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.MantenimientoTabPage.Size = New System.Drawing.Size(854, 605)
+        Me.MantenimientoTabPage.Size = New System.Drawing.Size(854, 554)
         Me.MantenimientoTabPage.TabIndex = 1
         Me.MantenimientoTabPage.Text = "Mantenimiento"
         Me.MantenimientoTabPage.UseVisualStyleBackColor = True
@@ -250,7 +250,7 @@ Partial Class UsuariosForm
         '
         Me.ActualizarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ActualizarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ActualizarButton.Location = New System.Drawing.Point(116, 570)
+        Me.ActualizarButton.Location = New System.Drawing.Point(116, 519)
         Me.ActualizarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ActualizarButton.Name = "ActualizarButton"
         Me.ActualizarButton.Size = New System.Drawing.Size(100, 26)
@@ -262,7 +262,7 @@ Partial Class UsuariosForm
         '
         Me.CancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CancelarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.CancelarButton.Location = New System.Drawing.Point(224, 570)
+        Me.CancelarButton.Location = New System.Drawing.Point(224, 519)
         Me.CancelarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CancelarButton.Name = "CancelarButton"
         Me.CancelarButton.Size = New System.Drawing.Size(100, 26)
@@ -274,7 +274,7 @@ Partial Class UsuariosForm
         '
         Me.InsertarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.InsertarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.InsertarButton.Location = New System.Drawing.Point(8, 570)
+        Me.InsertarButton.Location = New System.Drawing.Point(8, 519)
         Me.InsertarButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.InsertarButton.Name = "InsertarButton"
         Me.InsertarButton.Size = New System.Drawing.Size(100, 26)
@@ -302,7 +302,7 @@ Partial Class UsuariosForm
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox2.Size = New System.Drawing.Size(838, 271)
+        Me.GroupBox2.Size = New System.Drawing.Size(838, 224)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Mis datos"
@@ -580,7 +580,7 @@ Partial Class UsuariosForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(886, 661)
+        Me.ClientSize = New System.Drawing.Size(886, 610)
         Me.Controls.Add(Me.TabControl)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
