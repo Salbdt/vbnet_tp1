@@ -27,12 +27,12 @@ Public Class NPersona
         End Try
     End Function
 
-    Public Function Obtener(id As Integer) As Persona
+    Public Function Obtener(idUsuario As Integer) As Persona
         Try
             Dim persona As New Persona
             Dim datos As New DPersona
             Dim tabla As New DataTable
-            tabla = datos.Obtener(id)
+            tabla = datos.Obtener(idUsuario)
 
             If (tabla.Rows.Count > 0) Then
                 persona.IdUsuario = tabla.Rows(0).Item(0).ToString

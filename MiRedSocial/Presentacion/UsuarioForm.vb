@@ -27,7 +27,7 @@
                 Dim caja As New MensajeCaja("Error al obtener los datos del usuario, reinicie el sistema", vbOKOnly + vbCritical, "Error de usuario")
                 caja.ShowDialog()
             Else
-                idLabel.Text = usuario.IdUsuario
+                IdLabel.Text = usuario.IdUsuario
                 RolesComboBox.SelectedValue = usuario.Rol.IdRol
                 NombreUsuarioTextBox.Text = usuario.NombreUsuario
                 AvatarTextBox.Text = usuario.Avatar
@@ -74,7 +74,7 @@
                 Dim neg As New Negocio.NUsuario
                 Dim emailNuevo, claveNueva As String
 
-                usuario.IdUsuario = idLabel.Text
+                usuario.IdUsuario = IdLabel.Text
                 usuario.Rol = New Entidades.Rol
                 usuario.Rol.IdRol = RolesComboBox.SelectedValue
                 usuario.NombreUsuario = NombreUsuarioTextBox.Text
@@ -89,11 +89,11 @@
                 If (neg.Actualizar(usuario, emailNuevo, claveNueva)) Then
                     caja = New MensajeCaja("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
                     caja.ShowDialog()
-                    Me.Obtener(usuario.IdUsuario)
                 Else
                     caja = New MensajeCaja("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización incorrecta")
                     caja.ShowDialog()
                 End If
+                Me.Obtener(usuario.IdUsuario)
             Else
                 caja = New MensajeCaja("Rellene todos los campos obligatorios", vbOKOnly + vbInformation, "Campos incompletos")
                 caja.ShowDialog()

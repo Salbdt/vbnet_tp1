@@ -97,7 +97,22 @@ Public Class NUsuario
             Dim datos As New DUsuario
             Dim tabla As New DataTable
             tabla = datos.Actualizar(obj, emailNuevo, claveNueva)
+            If (tabla.Rows.Count > 0) Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
 
+    Public Function Actualizar(obj As Usuario, persona As Persona) As Boolean
+        Try
+            Dim datos As New DUsuario
+            Dim tabla As New DataTable
+            tabla = datos.Actualizar(obj, persona)
             If (tabla.Rows.Count > 0) Then
                 Return True
             Else

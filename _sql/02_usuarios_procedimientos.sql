@@ -66,21 +66,28 @@ create procedure usuario_actualizar
 @avatar varchar(100),
 @clave varchar(50)
 as
-	if @clave <> ''
-		update usuarios set
-		id_rol = @id_rol,
-		nombre_usuario = @nombre_usuario,
-		email = @email,
-		avatar = @avatar,
-		clave = hashbytes('SHA2_256', @clave)
-		where id_usuario = @id_usuario;
-	else
-		update usuarios set
-		id_rol = @id_rol,
-		nombre_usuario = @nombre_usuario,
-		email = @email,
-		avatar = @avatar
-		where id_usuario = @id_usuario;
+begin
+	select id_usuario from usuarios
+	where id_usuario = @id_usuario and email = @email and clave = hashbytes('SHA2_256', @clave);
+
+	update usuarios set
+	id_rol = @id_rol,
+	nombre_usuario = @nombre_usuario,
+	avatar = @avatar
+	where id_usuario = @id_usuario and email = @email and clave = hashbytes('SHA2_256', @clave);
+
+	if @clave_nueva <> ''
+	begin
+		update usuarios set clave = hashbytes('SHA2_256', @clave_nueva)
+		where id_usuario = @id_usuario and email = @email and clave = hashbytes('SHA2_256', @clave);
+	end
+
+	if @email_nuevo <> ''
+	begin
+		update usuarios set email = @email_nuevo
+		where id_usuario = @id_usuario and email = @email and clave = hashbytes('SHA2_256', @clave);
+	end
+end
 go
 
 --Procedimiento Eliminar

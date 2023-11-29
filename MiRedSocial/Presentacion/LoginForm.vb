@@ -19,13 +19,14 @@ Public Class LoginForm
                 caja = New MensajeCaja("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
                 caja.ShowDialog()
             Else
-                If (usuario.Estado = False) Then
-                    caja = New MensajeCaja("El usuario está bloqueado", vbOKOnly + vbCritical, "Usuario inhabilitado")
-                    caja.ShowDialog()
-                Else
+                If (usuario.Estado = True) Then
                     PrincipalForm.Usuario = usuario
                     Me.Hide()
+                    PrincipalForm.Cargar() 'Sirve para actualizar cuando se cierra la sesión desde el menú
                     PrincipalForm.Show()
+                Else
+                    caja = New MensajeCaja("El usuario está bloqueado", vbOKOnly + vbCritical, "Usuario inhabilitado")
+                    caja.ShowDialog()
                 End If
             End If
         Catch ex As Exception

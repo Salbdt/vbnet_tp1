@@ -40,13 +40,13 @@ Public Class DPersona
         End Try
     End Function
 
-    Public Function Obtener(id As Integer) As DataTable
+    Public Function Obtener(idUsuario As Integer) As DataTable
         Try
             Dim resultado As SqlDataReader
             Dim tabla As New DataTable
             Dim comando As New SqlCommand("personas_obtener", MyBase.conn)
             comando.CommandType = CommandType.StoredProcedure
-            comando.Parameters.Add("@id_persona", SqlDbType.VarChar).Value = id
+            comando.Parameters.Add("@id_usuario", SqlDbType.VarChar).Value = idUsuario
             MyBase.conn.Open()
             resultado = comando.ExecuteReader()
             tabla.Load(resultado)

@@ -90,10 +90,14 @@ Public Class PrincipalForm
         End If
     End Sub
 
-    Private Sub PrincipalForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub Cargar()
         EstadoToolStrip.Text = "Usuario actual: " & _usuario.NombreUsuario
         UsuarioToolStripMenuItem.Text = _usuario.NombreUsuario
         Me.ActivarPermisos()
+    End Sub
+
+    Private Sub PrincipalForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Cargar()
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
@@ -128,7 +132,7 @@ Public Class PrincipalForm
     Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
         Dim caja As New MensajeCaja("¿Está seguro que desea cerrar la sesión?", vbYesNo + vbQuestion, "Cerrar sesión de MiRedSocial")
         If (caja.ShowDialog() = DialogResult.Yes) Then
-            _usuario = Nothing
+            Me.Usuario = Nothing
             Me.Hide()
             LoginForm.Show()
         End If

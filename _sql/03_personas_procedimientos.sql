@@ -24,12 +24,12 @@ go
 
 --Procedimiento Obtener
 create procedure personas_obtener
-@id_persona int
+@id_usuario int
 as
 	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
 		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
 	from personas p inner join usuarios u on p.id_usuario = u.id_usuario
-	where p.id_persona = @id_persona
+	where p.id_usuario = @id_usuario
 	order by p.id_persona desc
 go
 
