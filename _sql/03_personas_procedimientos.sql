@@ -4,22 +4,22 @@ go
 --Procedimiento Listar
 create procedure personas_listar
 as
-	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
-		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
-	from personas p
-	order by p.id_persona desc
+	select id_usuario, id_persona, nombre, apellido,
+		tipo_documento, num_documento, domicilio, telefono
+	from personas
+	order by id_persona desc
 go
 
 --Procedimiento Buscar
 create procedure personas_buscar
 @valor varchar(50)
 as
-	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
-		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
-	from personas p
-	where p.nombre like '%' + @valor + '%' or p.apellido like '%' + @valor + '%'
-		or p.num_documento like '%' + @valor + '%' or p.domicilio like '%' + @valor + '%'
-	order by p.id_persona desc
+	select id_usuario, id_persona, nombre, apellido,
+		tipo_documento, num_documento, domicilio, telefono
+	from personas
+	where nombre like '%' + @valor + '%' or apellido like '%' + @valor + '%'
+		or num_documento like '%' + @valor + '%' or domicilio like '%' + @valor + '%'
+	order by id_persona desc
 go
 
 --Procedimiento Obtener
@@ -49,16 +49,56 @@ as
 begin
 	select p.id_persona from personas p
 	inner join usuarios u on p.id_usuario = u.id_usuario
-	where p.id_persona = @id_persona
+	where p.id_persona = @id_persona and p.id_usuario = @id_usuario
 	and u.email = @email and u.clave = hashbytes('SHA2_256', @clave);
 
-	update personas	set
-	nombre = @nombre,
-	apellido = @apellido,
-	tipo_documento = @tipo_documento,
-	num_documento = @num_documento
-	from personas p inner join usuarios u on p.id_usuario = u.id_usuario
-	where p.id_persona = @id_persona
-	and u.email = @email and u.clave = hashbytes('SHA2_256', @clave);
+	-- Actualizamos la persona
+	if @nombre <> ''
+	begin
+		update personas set	nombre = @nombre
+		from personas p inner join usuarios u on p.id_usuario = u.id_usuario
+		where p.id_usuario = @id_usuario and p.id_persona = @id_persona
+		and u.email = @email and u.clave = hashbytes('SHA2_256', @clave);
+	end
+
+	if @apellido <> ''
+	begin
+		update personas set	apellido = @apellido
+		from personas p inner join usuarios u on p.id_usuario = u.id_usuario
+		where p.id_usuario = @id_usuario and p.id_persona = @id_persona
+		and u.email = @email and u.clave = hashbytes('SHA2_256', @clave);
+	end
+
+	if @tipo_documento <> ''
+	begin
+		update personas set	tipo_documento = @tipo_documento
+		from personas p inner join usuarios u on p.id_usuario = u.id_usuario
+		where p.id_usuario = @id_usuario and p.id_persona = @id_persona
+		and u.email = @email and u.clave = hashbytes('SHA2_256', @clave);
+	end
+
+	if @num_documento <> ''
+	begin
+		update personas set	num_documento = @num_documento
+		from personas p inner join usuarios u on p.id_usuario = u.id_usuario
+		where p.id_usuario = @id_usuario and p.id_persona = @id_persona
+		and u.email = @email and u.clave = hashbytes('SHA2_256', @clave);
+	end
+
+	if @domicilio <> ''
+	begin
+		update personas set	domicilio = @domicilio
+		from personas p inner join usuarios u on p.id_usuario = u.id_usuario
+		where p.id_usuario = @id_usuario and p.id_persona = @id_persona
+		and u.email = @email and u.clave = hashbytes('SHA2_256', @clave);
+	end
+
+	if @telefono <> ''
+	begin
+		update personas set	telefono = @telefono
+		from personas p inner join usuarios u on p.id_usuario = u.id_usuario
+		where p.id_usuario = @id_usuario and p.id_persona = @id_persona
+		and u.email = @email and u.clave = hashbytes('SHA2_256', @clave);
+	end
 end
 go

@@ -70,6 +70,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -97,10 +98,22 @@
     <Compile Include="CajaMensaje.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CrearPublicacionForm.Designer.vb">
+      <DependentUpon>CrearPublicacionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrearPublicacionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuroForm.Designer.vb">
+      <DependentUpon>MuroForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MuroForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -119,12 +132,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PersonaForm.Designer.vb">
+      <DependentUpon>PersonaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PersonaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PrincipalForm.Designer.vb">
       <DependentUpon>PrincipalForm.vb</DependentUpon>
     </Compile>
     <Compile Include="PrincipalForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PublicacionPanel.vb" />
     <Compile Include="RolesForm.Designer.vb">
       <DependentUpon>RolesForm.vb</DependentUpon>
     </Compile>
@@ -149,14 +169,23 @@
     <EmbeddedResource Include="CajaMensaje.resx">
       <DependentUpon>CajaMensaje.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrearPublicacionForm.resx">
+      <DependentUpon>CrearPublicacionForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuroForm.resx">
+      <DependentUpon>MuroForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonaForm.resx">
+      <DependentUpon>PersonaForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.vb</DependentUpon>

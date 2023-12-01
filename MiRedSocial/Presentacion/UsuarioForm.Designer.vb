@@ -24,7 +24,7 @@ Partial Class UsuarioForm
     Private Sub InitializeComponent()
         Me.ElegirAvatarButton = New System.Windows.Forms.Button()
         Me.AvatarLabel = New System.Windows.Forms.Label()
-        Me.IdLabel = New System.Windows.Forms.Label()
+        Me.IdUsuarioLabel = New System.Windows.Forms.Label()
         Me.AvatarTextBox = New System.Windows.Forms.TextBox()
         Me.AvatarPictureBox = New System.Windows.Forms.PictureBox()
         Me.ClaveLabel = New System.Windows.Forms.Label()
@@ -68,16 +68,16 @@ Partial Class UsuarioForm
         Me.AvatarLabel.Text = "Avatar"
         Me.AvatarLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'IdLabel
+        'IdUsuarioLabel
         '
-        Me.IdLabel.AutoSize = True
-        Me.IdLabel.Location = New System.Drawing.Point(355, 19)
-        Me.IdLabel.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
-        Me.IdLabel.Name = "IdLabel"
-        Me.IdLabel.Size = New System.Drawing.Size(26, 20)
-        Me.IdLabel.TabIndex = 22
-        Me.IdLabel.Text = "ID"
-        Me.IdLabel.Visible = False
+        Me.IdUsuarioLabel.AutoSize = True
+        Me.IdUsuarioLabel.Location = New System.Drawing.Point(355, 19)
+        Me.IdUsuarioLabel.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
+        Me.IdUsuarioLabel.Name = "IdUsuarioLabel"
+        Me.IdUsuarioLabel.Size = New System.Drawing.Size(85, 20)
+        Me.IdUsuarioLabel.TabIndex = 22
+        Me.IdUsuarioLabel.Text = "ID Usuario"
+        Me.IdUsuarioLabel.Visible = False
         '
         'AvatarTextBox
         '
@@ -241,6 +241,7 @@ Partial Class UsuarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(886, 322)
         Me.Controls.Add(Me.EmailNuevoLabel)
         Me.Controls.Add(Me.EmailNuevoTextBox)
@@ -250,7 +251,7 @@ Partial Class UsuarioForm
         Me.Controls.Add(Me.CancelarButton)
         Me.Controls.Add(Me.ElegirAvatarButton)
         Me.Controls.Add(Me.AvatarLabel)
-        Me.Controls.Add(Me.IdLabel)
+        Me.Controls.Add(Me.IdUsuarioLabel)
         Me.Controls.Add(Me.AvatarTextBox)
         Me.Controls.Add(Me.AvatarPictureBox)
         Me.Controls.Add(Me.ClaveLabel)
@@ -274,7 +275,7 @@ Partial Class UsuarioForm
 
     Friend WithEvents ElegirAvatarButton As Button
     Friend WithEvents AvatarLabel As Label
-    Friend WithEvents IdLabel As Label
+    Friend WithEvents IdUsuarioLabel As Label
     Friend WithEvents AvatarTextBox As TextBox
     Friend WithEvents AvatarPictureBox As PictureBox
     Friend WithEvents ClaveLabel As Label

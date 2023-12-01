@@ -1,7 +1,10 @@
-﻿Public Class UsuarioForm
+﻿Imports System.IO
+
+Public Class UsuarioForm
     Private idUsuario As Integer
     Private rutaOrigen As String
     Private rutaDestino As String
+    Private avatarAnterior As String
 
     Public Sub New(id As Integer)
 
@@ -27,16 +30,20 @@
                 Dim caja As New MensajeCaja("Error al obtener los datos del usuario, reinicie el sistema", vbOKOnly + vbCritical, "Error de usuario")
                 caja.ShowDialog()
             Else
-                IdLabel.Text = usuario.IdUsuario
+                IdUsuarioLabel.Text = usuario.IdUsuario
                 RolesComboBox.SelectedValue = usuario.Rol.IdRol
                 NombreUsuarioTextBox.Text = usuario.NombreUsuario
-                AvatarTextBox.Text = usuario.Avatar
-                Try
-                    AvatarPictureBox.Image = Image.FromFile(Variables.directorioImagen & usuario.Avatar)
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
                 EmailTextBox.Text = usuario.Email
+
+                If (usuario.Avatar <> "") Then
+                    AvatarTextBox.Text = usuario.Avatar
+                    Try
+                        AvatarPictureBox.Image = Image.FromFile(Variables.rutaAvatares & usuario.Avatar)
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                End If
+
                 Me.Limpiar()
             End If
         Catch ex As Exception
@@ -74,7 +81,7 @@
                 Dim neg As New Negocio.NUsuario
                 Dim emailNuevo, claveNueva As String
 
-                usuario.IdUsuario = IdLabel.Text
+                usuario.IdUsuario = IdUsuarioLabel.Text
                 usuario.Rol = New Entidades.Rol
                 usuario.Rol.IdRol = RolesComboBox.SelectedValue
                 usuario.NombreUsuario = NombreUsuarioTextBox.Text
@@ -89,6 +96,13 @@
                 If (neg.Actualizar(usuario, emailNuevo, claveNueva)) Then
                     caja = New MensajeCaja("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
                     caja.ShowDialog()
+                    If (AvatarTextBox.Text <> "") Then
+                        rutaDestino = Variables.rutaAvatares & AvatarTextBox.Text
+                        File.Copy(rutaOrigen, rutaDestino)
+                        If (avatarAnterior <> "") Then
+                            File.Delete(Variables.rutaAvatares & avatarAnterior)
+                        End If
+                    End If
                 Else
                     caja = New MensajeCaja("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización incorrecta")
                     caja.ShowDialog()
@@ -102,5 +116,16 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub ElegirAvatarButton_Click(sender As Object, e As EventArgs) Handles ElegirAvatarButton.Click
+        Dim file As New OpenFileDialog
+        file.Filter = "Image Files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"
+        If file.ShowDialog() = DialogResult.OK Then
+            avatarAnterior = AvatarTextBox.Text
+            AvatarPictureBox.Image = Image.FromFile(file.FileName)
+            rutaOrigen = file.FileName
+            AvatarTextBox.Text = file.FileName.Substring(file.FileName.LastIndexOf("\") + 1)
+        End If
     End Sub
 End Class

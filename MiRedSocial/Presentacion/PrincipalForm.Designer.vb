@@ -32,10 +32,10 @@ Partial Class PrincipalForm
         Me.AccesosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RolesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PersonasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SocialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MuroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MiMuroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MensajesPrivadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PersonasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarraDeHerramientasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarraDeEstadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -51,12 +51,12 @@ Partial Class PrincipalForm
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.EstadoToolStrip = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -85,8 +85,9 @@ Partial Class PrincipalForm
         '
         Me.MiPerfilToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MiPerfilToolStripMenuItem.Name = "MiPerfilToolStripMenuItem"
+        Me.MiPerfilToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
         Me.MiPerfilToolStripMenuItem.Size = New System.Drawing.Size(206, 26)
-        Me.MiPerfilToolStripMenuItem.Text = "Mi Perfil"
+        Me.MiPerfilToolStripMenuItem.Text = "Mi &Perfil"
         '
         'DatosPersonalesToolStripMenuItem
         '
@@ -98,7 +99,7 @@ Partial Class PrincipalForm
         '
         'AccesosToolStripMenuItem
         '
-        Me.AccesosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RolesToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.PersonasToolStripMenuItem})
+        Me.AccesosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RolesToolStripMenuItem, Me.UsuariosToolStripMenuItem})
         Me.AccesosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AccesosToolStripMenuItem.Name = "AccesosToolStripMenuItem"
         Me.AccesosToolStripMenuItem.Size = New System.Drawing.Size(77, 25)
@@ -107,41 +108,41 @@ Partial Class PrincipalForm
         'RolesToolStripMenuItem
         '
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(141, 26)
         Me.RolesToolStripMenuItem.Text = "Roles"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(141, 26)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
-        '
-        'PersonasToolStripMenuItem
-        '
-        Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
-        Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(142, 26)
-        Me.PersonasToolStripMenuItem.Text = "Personas"
         '
         'SocialToolStripMenuItem
         '
-        Me.SocialToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MuroToolStripMenuItem, Me.MensajesPrivadosToolStripMenuItem})
+        Me.SocialToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MiMuroToolStripMenuItem, Me.MensajesPrivadosToolStripMenuItem, Me.PersonasToolStripMenuItem})
         Me.SocialToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SocialToolStripMenuItem.Name = "SocialToolStripMenuItem"
         Me.SocialToolStripMenuItem.Size = New System.Drawing.Size(63, 25)
         Me.SocialToolStripMenuItem.Text = "Social"
         '
-        'MuroToolStripMenuItem
+        'MiMuroToolStripMenuItem
         '
-        Me.MuroToolStripMenuItem.Name = "MuroToolStripMenuItem"
-        Me.MuroToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.M), System.Windows.Forms.Keys)
-        Me.MuroToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
-        Me.MuroToolStripMenuItem.Text = "&Muro"
+        Me.MiMuroToolStripMenuItem.Name = "MiMuroToolStripMenuItem"
+        Me.MiMuroToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.M), System.Windows.Forms.Keys)
+        Me.MiMuroToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
+        Me.MiMuroToolStripMenuItem.Text = "Mi &Muro"
         '
         'MensajesPrivadosToolStripMenuItem
         '
         Me.MensajesPrivadosToolStripMenuItem.Name = "MensajesPrivadosToolStripMenuItem"
         Me.MensajesPrivadosToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
         Me.MensajesPrivadosToolStripMenuItem.Text = "Mensajes Privados"
+        '
+        'PersonasToolStripMenuItem
+        '
+        Me.PersonasToolStripMenuItem.Name = "PersonasToolStripMenuItem"
+        Me.PersonasToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
+        Me.PersonasToolStripMenuItem.Text = "Personas"
         '
         'VerMenu
         '
@@ -249,6 +250,12 @@ Partial Class PrincipalForm
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.AboutToolStripMenuItem.Text = "&About ..."
         '
+        'CerrarSesionToolStripMenuItem
+        '
+        Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(116, 25)
+        Me.CerrarSesionToolStripMenuItem.Text = "Cerrar Sesión"
+        '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -282,12 +289,6 @@ Partial Class PrincipalForm
         Me.EstadoToolStrip.Name = "EstadoToolStrip"
         Me.EstadoToolStrip.Size = New System.Drawing.Size(125, 21)
         Me.EstadoToolStrip.Text = "Usuario actual: ..."
-        '
-        'CerrarSesionToolStripMenuItem
-        '
-        Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(116, 25)
-        Me.CerrarSesionToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'PrincipalForm
         '
@@ -334,7 +335,7 @@ Partial Class PrincipalForm
     Friend WithEvents BarraDeHerramientasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BarraDeEstadoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SocialToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MuroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MiMuroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MensajesPrivadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AccesosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RolesToolStripMenuItem As ToolStripMenuItem
@@ -342,7 +343,7 @@ Partial Class PrincipalForm
     Friend WithEvents UsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MiPerfilToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DatosPersonalesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PersonasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PersonasToolStripMenuItem As ToolStripMenuItem
 End Class

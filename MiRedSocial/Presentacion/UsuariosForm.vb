@@ -1,6 +1,10 @@
-﻿Public Class UsuariosForm
+﻿Imports System.IO
+Imports Entidades
+
+Public Class UsuariosForm
     Private rutaOrigen As String
     Private rutaDestino As String
+    Dim avatarAnterior As String
     Private esAdministrador As Boolean
 
     Public Sub New(esAdministrador As Boolean)
@@ -130,7 +134,7 @@
 
     Private Function LeerUsuario() As Entidades.Usuario
         Dim usuario As New Entidades.Usuario
-        usuario.IdUsuario = IdLabel.Text
+        usuario.IdUsuario = IdUsuarioLabel.Text
         usuario.Rol = New Entidades.Rol
         usuario.Rol.IdRol = RolesComboBox.SelectedValue
         usuario.NombreUsuario = NombreUsuarioTextBox.Text
@@ -172,6 +176,7 @@
                 Dim Neg As New Negocio.NUsuario
                 For Each row As DataGridViewRow In ListadoDataGridView.SelectedRows
                     Neg.Eliminar(Convert.ToInt32(row.Cells("id").Value))
+                    File.Delete(Variables.rutaAvatares & row.Cells("avatar").Value)
                 Next
                 Me.Listar()
             Catch ex As Exception
@@ -214,6 +219,7 @@
         Dim file As New OpenFileDialog
         file.Filter = "Image Files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"
         If file.ShowDialog() = DialogResult.OK Then
+            avatarAnterior = AvatarTextBox.Text
             AvatarPictureBox.Image = Image.FromFile(file.FileName)
             rutaOrigen = file.FileName
             AvatarTextBox.Text = file.FileName.Substring(file.FileName.LastIndexOf("\") + 1)
@@ -233,6 +239,10 @@
                 If (neg.Insertar(usuario, persona.ToDatatable(False))) Then
                     caja = New MensajeCaja("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro correcto")
                     caja.ShowDialog()
+                    If (AvatarTextBox.Text <> "") Then
+                        rutaDestino = Variables.rutaAvatares & AvatarTextBox.Text
+                        File.Copy(rutaOrigen, rutaDestino)
+                    End If
                     If (esAdministrador = True) Then
                         Me.Listar()
                     Else
@@ -263,6 +273,13 @@
                 If (neg.Actualizar(usuario, persona)) Then
                     caja = New MensajeCaja("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
                     caja.ShowDialog()
+                    If (AvatarTextBox.Text <> "") Then
+                        rutaDestino = Variables.rutaAvatares & AvatarTextBox.Text
+                        File.Copy(rutaOrigen, rutaDestino)
+                        If (avatarAnterior <> "") Then
+                            File.Delete(Variables.rutaAvatares & avatarAnterior)
+                        End If
+                    End If
                     Me.Listar()
                     TabControl.SelectedIndex = 0
                 Else
@@ -290,18 +307,21 @@
     Private Sub ListadoDataGridView_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles ListadoDataGridView.CellDoubleClick
 
         'Cargamos los datos del usuario
-        IdLabel.Text = ListadoDataGridView.SelectedCells.Item(3).Value
+        IdUsuarioLabel.Text = ListadoDataGridView.SelectedCells.Item(3).Value
         RolesComboBox.SelectedValue = ListadoDataGridView.SelectedCells.Item(0).Value
         NombreUsuarioTextBox.Text = ListadoDataGridView.SelectedCells.Item(4).Value
+        EmailTextBox.Text = ListadoDataGridView.SelectedCells.Item(6).Value
         If (ListadoDataGridView.SelectedCells.Item(5).Value <> "") Then
             AvatarTextBox.Text = ListadoDataGridView.SelectedCells.Item(5).Value
             Try
-                AvatarPictureBox.Image = Image.FromFile(Variables.directorioImagen & ListadoDataGridView.SelectedCells.Item(5).Value)
+                AvatarPictureBox.Image = Image.FromFile(Variables.rutaAvatares & ListadoDataGridView.SelectedCells.Item(5).Value)
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
+        Else
+            AvatarTextBox.Text = ""
+            AvatarPictureBox.Image = Nothing
         End If
-        EmailTextBox.Text = ListadoDataGridView.SelectedCells.Item(6).Value
 
         'Cargamos los datos de la persona
         Me.ObtenerPersona(ListadoDataGridView.SelectedCells.Item(3).Value)

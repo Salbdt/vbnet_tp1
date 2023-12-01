@@ -80,6 +80,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Persona.vb" />
+    <Compile Include="Publicacion.vb" />
     <Compile Include="Rol.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>

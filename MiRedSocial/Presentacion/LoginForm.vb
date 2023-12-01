@@ -19,7 +19,7 @@ Public Class LoginForm
                 caja = New MensajeCaja("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
                 caja.ShowDialog()
             Else
-                If (usuario.Estado = True) Then
+                If (usuario.Estado = True And usuario.Rol.Estado = True) Then
                     PrincipalForm.Usuario = usuario
                     Me.Hide()
                     PrincipalForm.Cargar() 'Sirve para actualizar cuando se cierra la sesión desde el menú
@@ -39,7 +39,7 @@ Public Class LoginForm
         Application.Exit()
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub RegistrarseLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RegistrarseLinkLabel.LinkClicked
         Dim usuariosForm As New UsuariosForm(False)
         usuariosForm.TabControl.TabPages.Remove(usuariosForm.ListaTabPage)
         usuariosForm.ShowDialog()

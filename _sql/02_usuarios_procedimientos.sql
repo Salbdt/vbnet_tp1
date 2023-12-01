@@ -5,7 +5,7 @@ go
 create procedure usuarios_listar
 as
 	select u.id_rol, r.nombre as rol, r.estado as estado_rol,
-		u.id_usuario, u.nombre_usuario as usuario, u.avatar, u.email, u.estado
+		u.id_usuario, u.nombre_usuario, u.avatar, u.email, u.estado
 	from usuarios u inner join roles r on u.id_rol = r.id_rol
 	order by u.id_usuario desc
 go
@@ -15,7 +15,7 @@ create procedure usuarios_buscar
 @valor varchar(50)
 as
 	select u.id_rol, r.nombre as rol, r.estado as estado_rol,
-		u.id_usuario, u.nombre_usuario as usuario, u.avatar, u.email, u.estado
+		u.id_usuario, u.nombre_usuario, u.avatar, u.email, u.estado
 	from usuarios u inner join roles r on u.id_rol = r.id_rol
 	where u.nombre_usuario like '%' + @valor + '%' or u.email like '%' + @valor + '%'
 	order by u.nombre_usuario asc
@@ -63,8 +63,10 @@ create procedure usuario_actualizar
 @id_rol integer,
 @nombre_usuario varchar(100),
 @email varchar(50),
+@email_nuevo varchar(50),
 @avatar varchar(100),
-@clave varchar(50)
+@clave varchar(50),
+@clave_nueva varchar(50)
 as
 begin
 	select id_usuario from usuarios
@@ -78,13 +80,15 @@ begin
 
 	if @clave_nueva <> ''
 	begin
-		update usuarios set clave = hashbytes('SHA2_256', @clave_nueva)
+		update usuarios set
+		clave = hashbytes('SHA2_256', @clave_nueva)
 		where id_usuario = @id_usuario and email = @email and clave = hashbytes('SHA2_256', @clave);
 	end
 
 	if @email_nuevo <> ''
 	begin
-		update usuarios set email = @email_nuevo
+		update usuarios set
+		email = @email_nuevo
 		where id_usuario = @id_usuario and email = @email and clave = hashbytes('SHA2_256', @clave);
 	end
 end
@@ -94,11 +98,12 @@ go
 create procedure usuarios_eliminar
 @id_usuario integer
 as
+	delete from personas
+	where id_usuario = @id_usuario;
+	
 	delete from usuarios
 	where id_usuario = @id_usuario;
 
-	delete from personas
-	where id_usuario = @id_usuario;
 go
 
 --Procedimiento Desactivar

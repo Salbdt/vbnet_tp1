@@ -69,10 +69,7 @@ Public Class PrincipalForm
     End Sub
 
     Private Sub CloseAllToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CloseAllToolStripMenuItem.Click
-        ' Close all child forms of the parent.
-        For Each ChildForm As Form In Me.MdiChildren
-            ChildForm.Close()
-        Next
+        Me.CerrarFormularios()
     End Sub
 
     Public Property Usuario As Entidades.Usuario
@@ -83,6 +80,13 @@ Public Class PrincipalForm
             _usuario = value
         End Set
     End Property
+
+    Private Sub CerrarFormularios()
+        ' Close all child forms of the parent.
+        For Each ChildForm As Form In Me.MdiChildren
+            ChildForm.Close()
+        Next
+    End Sub
 
     Private Sub ActivarPermisos()
         If _usuario.Rol.Nombre <> "Administrador" Then
@@ -133,8 +137,21 @@ Public Class PrincipalForm
         Dim caja As New MensajeCaja("¿Está seguro que desea cerrar la sesión?", vbYesNo + vbQuestion, "Cerrar sesión de MiRedSocial")
         If (caja.ShowDialog() = DialogResult.Yes) Then
             Me.Usuario = Nothing
+            Me.CerrarFormularios()
             Me.Hide()
             LoginForm.Show()
         End If
+    End Sub
+
+    Private Sub DatosPersonalesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DatosPersonalesToolStripMenuItem.Click
+        Dim personaForm As New PersonaForm(_usuario.IdUsuario)
+        personaForm.MdiParent = Me
+        personaForm.Show()
+    End Sub
+
+    Private Sub MuroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MiMuroToolStripMenuItem.Click
+        Dim muroForm As New MuroForm(_usuario.IdUsuario, _usuario.IdUsuario)
+        muroForm.MdiParent = Me
+        muroForm.Show()
     End Sub
 End Class
