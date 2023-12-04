@@ -42,4 +42,8 @@ Public Class LoginForm
         usuariosForm.ShowDialog()
         Limpiar()
     End Sub
+
+    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        EmailTextBox.Focus()
+    End Sub
 End Class

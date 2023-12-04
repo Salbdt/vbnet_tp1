@@ -21,7 +21,9 @@ Public Class PrincipalForm
     End Sub
 
     Private Sub ActivarPermisos()
-        If _usuario.Rol.Nombre <> "Administrador" Then
+        If _usuario.Rol.Nombre = "Administrador" Then
+            AccesosToolStripMenuItem.Enabled = True
+        Else
             AccesosToolStripMenuItem.Enabled = False
         End If
     End Sub
@@ -85,5 +87,11 @@ Public Class PrincipalForm
         Dim muroForm As New MuroForm(_usuario.IdUsuario, _usuario.IdUsuario)
         muroForm.MdiParent = Me
         muroForm.Show()
+    End Sub
+
+    Private Sub PersonasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PersonasToolStripMenuItem.Click
+        Dim personasForm As New PersonasForm(_usuario.IdUsuario)
+        personasForm.MdiParent = Me
+        personasForm.Show()
     End Sub
 End Class

@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConexionExample.vb" />
     <Compile Include="Conexion.vb" />
     <Compile Include="DPersona.vb" />
     <Compile Include="DPublicacion.vb" />

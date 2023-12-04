@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Entidades
 Imports Presentacion.Variables
 
 Public Class UsuariosForm
@@ -128,7 +129,10 @@ Public Class UsuariosForm
 
     Private Function LeerUsuario() As Entidades.Usuario
         Dim usuario As New Entidades.Usuario
-        usuario.IdUsuario = IdUsuarioLabel.Text
+        If (IdUsuarioLabel.Text <> "ID Usuario") Then
+            usuario.IdUsuario = IdUsuarioLabel.Text
+        End If
+
         usuario.Rol = New Entidades.Rol
         usuario.Rol.IdRol = RolesComboBox.SelectedValue
         usuario.NombreUsuario = NombreUsuarioTextBox.Text
@@ -140,7 +144,11 @@ Public Class UsuariosForm
 
     Private Function LeerPersona() As Entidades.Persona
         Dim persona As New Entidades.Persona
-        persona.IdPersona = IdPersonaLabel.Text
+
+        If (IdPersonaLabel.Text <> "ID Persona") Then
+            persona.IdPersona = IdPersonaLabel.Text
+        End If
+
         persona.Nombre = NombreTextBox.Text
         persona.Apellido = ApellidoTextBox.Text
         persona.TipoDocumento = TipoDocumentoTextBox.Text

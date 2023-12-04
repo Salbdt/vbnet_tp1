@@ -15,6 +15,42 @@ Public Class NPersona
         End Try
     End Function
 
+    Public Function ListarPersonas() As DataTable
+        Try
+            Dim datos As New DPersona
+            Dim tabla As New DataTable
+            tabla = datos.ListarPersonas()
+            Return tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function ListarAmigos() As DataTable
+        Try
+            Dim datos As New DPersona
+            Dim tabla As New DataTable
+            tabla = datos.ListarAmigos()
+            Return tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function ListarBloqueados() As DataTable
+        Try
+            Dim datos As New DPersona
+            Dim tabla As New DataTable
+            tabla = datos.ListarBloqueados()
+            Return tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function Buscar(valor As String) As DataTable
         Try
             Dim datos As New DPersona

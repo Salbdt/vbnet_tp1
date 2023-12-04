@@ -10,6 +10,16 @@ as
 	order by u.id_usuario desc
 go
 
+--Procedimiento Obtener
+create procedure usuarios_obtener
+@id_usuario integer
+as
+	select u.id_rol, r.nombre as rol, r.estado as estado_rol,
+		u.id_usuario, u.nombre_usuario, u.avatar, u.email, u.estado
+	from usuarios u inner join roles r on u.id_rol = r.id_rol
+	where u.id_usuario = @id_usuario
+go
+
 --Procedimiento Buscar
 create procedure usuarios_buscar
 @valor varchar(50)
@@ -58,7 +68,7 @@ end;
 go
 
 --Procedimiento Actualizar
-create procedure usuario_actualizar
+create procedure usuarios_actualizar
 @id_usuario integer,
 @id_rol integer,
 @nombre_usuario varchar(100),

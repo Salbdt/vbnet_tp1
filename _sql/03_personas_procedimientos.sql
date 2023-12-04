@@ -10,11 +10,20 @@ as
 	order by id_persona desc
 go
 
+--Procedimiento Listar Ninguno
+create procedure personas_listar_personas
+as
+	select p.id_usuario, p.id_persona, p.nombre, p.apellido
+	from personas p
+	left join contactos c on p.id_usuario = c.id_contacto_uno
+	where c.id_contacto is null
+	order by nombre asc
+go
+
 --Procedimiento Listar Amigos
 create procedure personas_listar_amigos
 as
-	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
-		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
+	select p.id_usuario, p.id_persona, p.nombre, p.apellido
 	from personas p
 	inner join contactos c on p.id_usuario = c.id_contacto_uno
 	where c.tipo = 'Amigo'
@@ -24,8 +33,7 @@ go
 --Procedimiento Listar Bloqueados
 create procedure personas_listar_bloqueados
 as
-	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
-		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
+	select p.id_usuario, p.id_persona, p.nombre, p.apellido
 	from personas p
 	inner join contactos c on p.id_usuario = c.id_contacto_uno
 	where c.tipo = 'Bloqueado'
