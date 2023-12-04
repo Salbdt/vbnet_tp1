@@ -13,15 +13,15 @@ Public Class PersonasForm
     End Sub
 
     Private Sub Formato()
-        'ListadoDataGridView.Columns(0).Name = "idUsuario"
+        PersonasDataGridView.Columns(0).Name = "idUsuario"
         PersonasDataGridView.Columns(0).Visible = False
-        'ListadoDataGridView.Columns(1).Name = "idPersona"
+        PersonasDataGridView.Columns(1).Name = "idPersona"
         PersonasDataGridView.Columns(1).Visible = False
         PersonasDataGridView.Columns(2).Width = 180
-        'ListadoDataGridView.Columns(2).Name = "nombre"
+        PersonasDataGridView.Columns(2).Name = "nombre"
         PersonasDataGridView.Columns(2).HeaderText = "Nombre"
         PersonasDataGridView.Columns(3).Width = 180
-        'ListadoDataGridView.Columns(3).Name = "apellido"
+        PersonasDataGridView.Columns(3).Name = "apellido"
         PersonasDataGridView.Columns(3).HeaderText = "Apellido"
     End Sub
 
