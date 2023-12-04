@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-Imports Entidades
+Imports Presentacion.Variables
 
 Public Class UsuariosForm
     Private rutaOrigen As String
@@ -8,11 +8,7 @@ Public Class UsuariosForm
     Private esAdministrador As Boolean
 
     Public Sub New(esAdministrador As Boolean)
-
-        ' This call is required by the designer.
         InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
         Me.esAdministrador = esAdministrador
     End Sub
 
@@ -49,7 +45,7 @@ Public Class UsuariosForm
             Me.Formato()
             Me.Limpiar()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
     End Sub
 
@@ -63,13 +59,12 @@ Public Class UsuariosForm
             Me.Formato()
             Me.Limpiar()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
     End Sub
 
     Private Sub ObtenerPersona(idUsuario As Integer)
         Try
-            Dim caja As MensajeCaja
             Dim neg As New Negocio.NPersona
             Dim persona As Entidades.Persona = neg.Obtener(idUsuario)
 
@@ -82,11 +77,10 @@ Public Class UsuariosForm
                 DomicilioTextBox.Text = persona.Domicilio
                 TelefonoTextBox.Text = persona.Telefono
             Else
-                caja = New MensajeCaja("Error al obtener los datos de la persona", vbOKOnly + vbCritical, "Persona no encontrada")
-                caja.ShowDialog()
+                caja.MostrarMensaje("Error al obtener los datos de la persona", vbOKOnly + vbCritical, "Persona no encontrada")
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
     End Sub
 
@@ -128,7 +122,7 @@ Public Class UsuariosForm
             RolesComboBox.ValueMember = "id_rol"
             RolesComboBox.DisplayMember = "nombre"
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
     End Sub
 
@@ -170,47 +164,47 @@ Public Class UsuariosForm
     End Sub
 
     Private Sub EliminarButton_Click(sender As Object, e As EventArgs) Handles EliminarButton.Click
-        Dim caja As New MensajeCaja("¿Estás seguro/a de eliminar los registros seleccionados?", vbYesNo + vbCritical, "Eliminar registros")
-        If (caja.ShowDialog() = DialogResult.Yes) Then
+        Dim resultado As DialogResult = caja.MostrarMensaje("¿Estás seguro/a de eliminar los registros seleccionados?", vbYesNo + vbCritical, "Eliminar registros")
+        If (resultado = DialogResult.Yes) Then
             Try
-                Dim Neg As New Negocio.NUsuario
+                Dim neg As New Negocio.NUsuario
                 For Each row As DataGridViewRow In ListadoDataGridView.SelectedRows
-                    Neg.Eliminar(Convert.ToInt32(row.Cells("id").Value))
+                    neg.Eliminar(Convert.ToInt32(row.Cells("id").Value))
                     File.Delete(Variables.rutaAvatares & row.Cells("avatar").Value)
                 Next
                 Me.Listar()
             Catch ex As Exception
-                MsgBox(ex.Message)
+                caja.MostrarMensaje(ex.Message)
             End Try
         End If
     End Sub
 
     Private Sub DesactivarButton_Click(sender As Object, e As EventArgs) Handles DesactivarButton.Click
-        Dim caja As New MensajeCaja("¿Estás seguro/a de desactivar los registros seleccionados?", vbYesNo + vbQuestion, "Desactivar registros")
-        If (caja.ShowDialog() = DialogResult.Yes) Then
+        Dim resultado As DialogResult = caja.MostrarMensaje("¿Estás seguro/a de desactivar los registros seleccionados?", vbYesNo + vbQuestion, "Desactivar registros")
+        If (resultado = DialogResult.Yes) Then
             Try
-                Dim Neg As New Negocio.NUsuario
+                Dim neg As New Negocio.NUsuario
                 For Each row As DataGridViewRow In ListadoDataGridView.SelectedRows
-                    Neg.Desactivar(Convert.ToInt32(row.Cells("id").Value))
+                    neg.Desactivar(Convert.ToInt32(row.Cells("id").Value))
                 Next
                 Me.Listar()
             Catch ex As Exception
-                MsgBox(ex.Message)
+                caja.MostrarMensaje(ex.Message)
             End Try
         End If
     End Sub
 
     Private Sub ActivarButton_Click(sender As Object, e As EventArgs) Handles ActivarButton.Click
-        Dim caja As New MensajeCaja("¿Estás seguro/a de activar los registros seleccionados?", vbYesNo + vbQuestion, "Activar registros")
-        If (caja.ShowDialog() = DialogResult.Yes) Then
+        Dim resultado As DialogResult = caja.MostrarMensaje("¿Estás seguro/a de activar los registros seleccionados?", vbYesNo + vbQuestion, "Activar registros")
+        If (resultado = DialogResult.Yes) Then
             Try
-                Dim Neg As New Negocio.NUsuario
+                Dim neg As New Negocio.NUsuario
                 For Each row As DataGridViewRow In ListadoDataGridView.SelectedRows
-                    Neg.Activar(Convert.ToInt32(row.Cells("id").Value))
+                    neg.Activar(Convert.ToInt32(row.Cells("id").Value))
                 Next
                 Me.Listar()
             Catch ex As Exception
-                MsgBox(ex.Message)
+                caja.MostrarMensaje(ex.Message)
             End Try
         End If
     End Sub
@@ -228,17 +222,14 @@ Public Class UsuariosForm
 
     Private Sub InsertarButton_Click(sender As Object, e As EventArgs) Handles InsertarButton.Click
         Try
-            Dim caja As MensajeCaja
             If (RolesComboBox.Text <> "") And (NombreUsuarioTextBox.Text <> "") And (EmailTextBox.Text <> "") And
                 (ClaveTextBox.Text <> "") And (NombreTextBox.Text <> "") And (ApellidoTextBox.Text <> "") Then
-
                 Dim usuario As Entidades.Usuario = Me.LeerUsuario()
                 Dim persona As Entidades.Persona = Me.LeerPersona()
                 Dim neg As New Negocio.NUsuario
 
                 If (neg.Insertar(usuario, persona.ToDatatable(False))) Then
-                    caja = New MensajeCaja("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro correcto")
-                    caja.ShowDialog()
+                    caja.MostrarMensaje("Se ha registrado correctamente", vbOKOnly + vbInformation, "Registro correcto")
                     If (AvatarTextBox.Text <> "") Then
                         rutaDestino = Variables.rutaAvatares & AvatarTextBox.Text
                         File.Copy(rutaOrigen, rutaDestino)
@@ -250,29 +241,25 @@ Public Class UsuariosForm
                         Me.Close()
                     End If
                 Else
-                    caja = New MensajeCaja("No se ha podido registgrar", vbOKOnly + vbCritical, "Registro incorrecto")
-                    caja.ShowDialog()
+                    caja.MostrarMensaje("No se ha podido registgrar", vbOKOnly + vbCritical, "Registro incorrecto")
                 End If
             Else
-                caja = New MensajeCaja("Rellene todos los campos obligatorios", vbOKOnly + vbInformation, "Campos incompletos")
-                caja.ShowDialog()
+                caja.MostrarMensaje("Rellene todos los campos obligatorios", vbOKOnly + vbInformation, "Campos incompletos")
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
     End Sub
 
     Private Sub ActualizarButton_Click(sender As Object, e As EventArgs) Handles ActualizarButton.Click
         Try
-            Dim caja As MensajeCaja
             If (RolesComboBox.Text <> "") Then
                 Dim neg As New Negocio.NUsuario
                 Dim usuario As Entidades.Usuario = Me.LeerUsuario()
                 Dim persona As Entidades.Persona = Me.LeerPersona()
 
                 If (neg.Actualizar(usuario, persona)) Then
-                    caja = New MensajeCaja("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
-                    caja.ShowDialog()
+                    caja.MostrarMensaje("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
                     If (AvatarTextBox.Text <> "") Then
                         rutaDestino = Variables.rutaAvatares & AvatarTextBox.Text
                         File.Copy(rutaOrigen, rutaDestino)
@@ -283,15 +270,13 @@ Public Class UsuariosForm
                     Me.Listar()
                     TabControl.SelectedIndex = 0
                 Else
-                    caja = New MensajeCaja("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización incorrecta")
-                    caja.ShowDialog()
+                    caja.MostrarMensaje("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización incorrecta")
                 End If
             Else
-                caja = New MensajeCaja("Rellene todos los campos obligatorios", vbOKOnly + vbInformation, "Campos incompletos")
-                caja.ShowDialog()
+                caja.MostrarMensaje("Rellene todos los campos obligatorios", vbOKOnly + vbInformation, "Campos incompletos")
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
     End Sub
 

@@ -1,20 +1,25 @@
-﻿Imports System.Windows.Forms
-
-Public Class MensajeCaja
+﻿Public Class MensajeCaja
     Private mensaje As String
-    Private titulo As String
-    Private estilo As MsgBoxStyle
+    Private titulo As String = "Mensaje"
+    Private estilo As MsgBoxStyle = vbOKOnly + vbInformation
 
-    Public Sub New(mensaje As String, estilo As MsgBoxStyle, titulo As String)
-
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
+    Public Function MostrarMensaje(mensaje As String, estilo As MsgBoxStyle, titulo As String) As DialogResult
         Me.mensaje = mensaje
         Me.titulo = titulo
         Me.estilo = estilo
-    End Sub
+        Return Me.ShowDialog()
+    End Function
+
+    Public Function MostrarMensaje(mensaje As String, estilo As MsgBoxStyle) As DialogResult
+        Me.mensaje = mensaje
+        Me.estilo = estilo
+        Return Me.ShowDialog()
+    End Function
+
+    Public Function MostrarMensaje(mensaje As String) As DialogResult
+        Me.mensaje = mensaje
+        Return Me.ShowDialog()
+    End Function
 
     Private Sub Limpiar()
         SiNoTableLayoutPanel.Visible = False
@@ -49,22 +54,22 @@ Public Class MensajeCaja
     End Sub
 
     Private Sub SiButton_Click(sender As Object, e As EventArgs) Handles SiButton.Click
-        Me.DialogResult = System.Windows.Forms.DialogResult.Yes
+        Me.DialogResult = DialogResult.Yes
         Me.Close()
     End Sub
 
     Private Sub NoButton_Click(sender As Object, e As EventArgs) Handles NoButton.Click
-        Me.DialogResult = System.Windows.Forms.DialogResult.No
+        Me.DialogResult = DialogResult.No
         Me.Close()
     End Sub
 
     Private Sub XButton_Click(sender As Object, e As EventArgs)
-        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.DialogResult = DialogResult.Cancel
         Me.Close()
     End Sub
 
     Private Sub OkButton_Click(sender As Object, e As EventArgs) Handles OkButton.Click
-        Me.DialogResult = System.Windows.Forms.DialogResult.OK
+        Me.DialogResult = DialogResult.OK
         Me.Close()
     End Sub
 End Class

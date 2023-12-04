@@ -10,6 +10,20 @@ as
 	order by fecha desc;
 go
 
+-- Procedimiento Buscar_Usuario
+create procedure publicaciones_obtener
+@id_publicacion integer
+as
+	select p.id_publicacion, p.id_usuario, p.texto, p.imagen,
+		p.privacidad, p.fecha, p.fecha_modificacion,
+		u.nombre_usuario as usuario, u.avatar, r.nombre as rol
+	from publicaciones p 
+		inner join usuarios u on p.id_usuario = u.id_usuario
+		inner join roles r on u.id_rol = r.id_rol
+	where p.id_usuario = @id_usuario
+	order by fecha desc;
+go
+
 -- Procedimiento Buscar_Fecha
 create procedure publicaciones_buscar_fecha
 @id_usuario integer,
@@ -25,7 +39,6 @@ as
 	where p.id_usuario = @id_usuario and p.fecha between @fecha_inicio and @fecha_fin
 	order by fecha desc;
 go
-
 
 -- Procedimiento Buscar_Usuario
 create procedure publicaciones_buscar_usuario
@@ -58,7 +71,6 @@ go
 -- Procedimiento Actualizar
 create procedure publicaciones_actualizar
 @id_publicacion integer,
-@id_usuario integer, -- Id del usuario que quiere actualizar la publicación
 @texto varchar(510),
 @imagen varchar(100),
 @privacidad varchar(30)
@@ -68,16 +80,16 @@ begin
 	set
 		texto = @texto,
 		imagen = @imagen,
-		privacidad = @privacidad
-	where id_publicacion = @id_publicacion and id_usuario = @id_usuario;
+		privacidad = @privacidad,
+		fecha_modificacion = GETDATE()
+	where id_publicacion = @id_publicacion;
 end
 go
 
 -- Procedimiento Eliminar
 create procedure publicaciones_eliminar
-@id_publicacion integer,
-@id_usuario integer
+@id_publicacion integer
 as
 	delete from publicaciones
-	where id_publicacion = @id_publicacion and id_usuario = @id_usuario;
+	where id_publicacion = @id_publicacion;
 go

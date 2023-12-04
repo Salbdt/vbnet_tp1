@@ -6,9 +6,8 @@ Public Class LoginForm
     End Sub
 
     Private Sub IngresarButton_Click(sender As Object, e As EventArgs) Handles IngresarButton.Click
+        Dim caja As New MensajeCaja
         Try
-            Dim caja As MensajeCaja
-
             Dim email, clave As String
             Dim usuario As New Entidades.Usuario
             Dim neg As New Negocio.NUsuario
@@ -16,21 +15,19 @@ Public Class LoginForm
             clave = ClaveTextBox.Text.Trim()
             usuario = neg.Login(email, clave)
             If (usuario Is Nothing) Then
-                caja = New MensajeCaja("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
-                caja.ShowDialog()
+                caja.MostrarMensaje("No existe un usuario con ese email o clave", vbOKOnly + vbCritical, "Datos incorrectos")
             Else
                 If (usuario.Estado = True And usuario.Rol.Estado = True) Then
                     PrincipalForm.Usuario = usuario
                     Me.Hide()
-                    PrincipalForm.Cargar() 'Sirve para actualizar cuando se cierra la sesión desde el menú
+                    PrincipalForm.Iniciar() 'Sirve para actualizar cuando se cierra la sesión desde el menú
                     PrincipalForm.Show()
                 Else
-                    caja = New MensajeCaja("El usuario está bloqueado", vbOKOnly + vbCritical, "Usuario inhabilitado")
-                    caja.ShowDialog()
+                    caja.MostrarMensaje("El usuario está bloqueado", vbOKOnly + vbCritical, "Usuario inhabilitado")
                 End If
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
         Limpiar()
     End Sub

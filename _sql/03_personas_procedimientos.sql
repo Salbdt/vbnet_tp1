@@ -10,6 +10,28 @@ as
 	order by id_persona desc
 go
 
+--Procedimiento Listar Amigos
+create procedure personas_listar_amigos
+as
+	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
+		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
+	from personas p
+	inner join contactos c on p.id_usuario = c.id_contacto_uno
+	where c.tipo = 'Amigo'
+	order by nombre asc
+go
+
+--Procedimiento Listar Bloqueados
+create procedure personas_listar_bloqueados
+as
+	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
+		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
+	from personas p
+	inner join contactos c on p.id_usuario = c.id_contacto_uno
+	where c.tipo = 'Bloqueado'
+	order by nombre asc
+go
+
 --Procedimiento Buscar
 create procedure personas_buscar
 @valor varchar(50)
@@ -20,6 +42,32 @@ as
 	where nombre like '%' + @valor + '%' or apellido like '%' + @valor + '%'
 		or num_documento like '%' + @valor + '%' or domicilio like '%' + @valor + '%'
 	order by id_persona desc
+go
+
+--Procedimiento Buscar Amigos
+create procedure personas_buscar_amigos
+@valor varchar(50)
+as
+	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
+		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
+	from personas p
+	inner join contactos c on p.id_usuario = c.id_contacto_uno
+	where c.tipo = 'Amigo' and p.nombre like '%' + @valor + '%' or p.apellido like '%' + @valor + '%'
+		or p.num_documento like '%' + @valor + '%' or p.domicilio like '%' + @valor + '%'
+	order by nombre asc
+go
+
+--Procedimiento Buscar Bloqueados
+create procedure personas_buscar_bloqueados
+@valor varchar(50)
+as
+	select p.id_usuario, p.id_persona, p.nombre, p.apellido,
+		p.tipo_documento, p.num_documento, p.domicilio, p.telefono
+	from personas p
+	inner join contactos c on p.id_usuario = c.id_contacto_uno
+	where c.tipo = 'Bloqueado' and p.nombre like '%' + @valor + '%' or p.apellido like '%' + @valor + '%'
+		or p.num_documento like '%' + @valor + '%' or p.domicilio like '%' + @valor + '%'
+	order by nombre asc
 go
 
 --Procedimiento Obtener

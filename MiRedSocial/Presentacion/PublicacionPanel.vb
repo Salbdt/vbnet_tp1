@@ -1,23 +1,58 @@
-﻿Imports Entidades
-
-Public Class PublicacionPanel
+﻿Public Class PublicacionPanel
     Private puntoSiguiente As Point
     Private siguienteY As Integer
+    Private _botonesBorrar As Dictionary(Of Button, Integer)
+    Private _botonesEditar As Dictionary(Of Button, Integer)
 
     Public Sub New(puntoInicial As Point, siguienteY As Integer)
         Me.puntoSiguiente = puntoInicial
         Me.siguienteY = siguienteY
+        Me.BotonesBorrar = New Dictionary(Of Button, Integer)
+        Me.BotonesEditar = New Dictionary(Of Button, Integer)
     End Sub
 
-    Public Function CrearPanelPublicacion(avatar As String, nombreUsuario As String, nombreRol As String, fecha As String,
+    Public Property BotonesBorrar As Dictionary(Of Button, Integer)
+        Get
+            Return _botonesBorrar
+        End Get
+        Set(value As Dictionary(Of Button, Integer))
+            _botonesBorrar = value
+        End Set
+    End Property
+
+    Public Property BotonesEditar As Dictionary(Of Button, Integer)
+        Get
+            Return _botonesEditar
+        End Get
+        Set(value As Dictionary(Of Button, Integer))
+            _botonesEditar = value
+        End Set
+    End Property
+
+    Public Function CrearPanelPrincipal() As Panel
+        Dim panel As New Panel
+        panel.Anchor = 15
+        panel.AutoScroll = True
+        panel.Location = New Point(12, 54)
+        panel.Margin = New Padding(3)
+        panel.Padding = New Padding(3)
+        panel.Size = New Size(830, 419)
+        Return panel
+    End Function
+
+    Public Function CrearPanelPublicacion(idPublicacion As Integer, avatar As String, nombreUsuario As String, nombreRol As String, fecha As String,
                                           fechaModificacion As String, mensaje As String, imagen As String) As Panel
         Dim panel As New Panel
+        Dim borrarButton, editarButton As Button
+        panel.BackColor = Color.Snow
+        panel.BorderStyle = BorderStyle.FixedSingle
         panel.Anchor = 13
         panel.Location = puntoSiguiente
         panel.Margin = New Padding(3)
-        panel.Size = New Size(820, 158)
+        panel.Size = New Size(820, 190)
         puntoSiguiente = New Point(5, puntoSiguiente.Y + siguienteY)
 
+        panel.Controls.Add(CrearIdLabel(idPublicacion))
         panel.Controls.Add(CrearAvatarPictureBox(avatar))
         panel.Controls.Add(CrearUsuarioLabel(nombreUsuario))
         panel.Controls.Add(CrearRolLabel(nombreRol))
@@ -28,6 +63,12 @@ Public Class PublicacionPanel
         Else
             panel.Controls.Add(CrearMensajePublicacionLabel(mensaje, 654))
         End If
+        borrarButton = CrearBorrarPublicacionButton()
+        panel.Controls.Add(borrarButton)
+        Me.BotonesBorrar.Add(borrarButton, idPublicacion)
+        editarButton = CrearEditarPublicacionButton()
+        panel.Controls.Add(editarButton)
+        Me.BotonesEditar.Add(editarButton, idPublicacion)
 
         Return panel
     End Function
@@ -72,6 +113,16 @@ Public Class PublicacionPanel
         Return label
     End Function
 
+    Private Function CrearIdLabel(idPublicacion As Integer) As Label
+        Dim label As New Label
+        label.Text = idPublicacion.ToString
+        label.TextAlign = ContentAlignment.MiddleCenter
+        label.Visible = False
+        label.Anchor = 5
+        label.Location = New Point(4, 3)
+        Return label
+    End Function
+
     Private Function CrearFechaLabel(fecha As String, fechaModificacion As String) As Label
         Dim label As New Label
         label.Font = New Font("Microsoft Sans Serif", 9, FontStyle.Regular)
@@ -103,7 +154,7 @@ Public Class PublicacionPanel
         Dim pictureBox As New PictureBox
         pictureBox.SizeMode = PictureBoxSizeMode.StretchImage
         pictureBox.Anchor = 11
-        pictureBox.Location = New Point(633, 3)
+        pictureBox.Location = New Point(633, 9)
         pictureBox.Size = New Size(170, 170)
         If (imagen <> "") Then
             Try
@@ -113,5 +164,29 @@ Public Class PublicacionPanel
             End Try
         End If
         Return pictureBox
+    End Function
+
+    Private Function CrearBorrarPublicacionButton() As Button
+        Dim button As New Button
+        button.BackColor = Color.Tomato
+        button.FlatStyle = FlatStyle.Flat
+        button.Font = New Font("Microsoft Sans Serif", 10, FontStyle.Regular)
+        button.ForeColor = SystemColors.ControlLight
+        button.Text = "Borrar"
+        button.Anchor = 6
+        button.Location = New Point(6, 154)
+        button.Size = New Size(58, 26)
+        Return button
+    End Function
+
+    Private Function CrearEditarPublicacionButton() As Button
+        Dim button As New Button
+        button.FlatStyle = FlatStyle.Flat
+        button.Font = New Font("Microsoft Sans Serif", 10, FontStyle.Regular)
+        button.Text = "Editar"
+        button.Anchor = 6
+        button.Location = New Point(65, 154)
+        button.Size = New Size(58, 26)
+        Return button
     End Function
 End Class

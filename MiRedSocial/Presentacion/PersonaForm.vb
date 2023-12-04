@@ -2,20 +2,15 @@
     Private idUsuario As Integer
 
     Public Sub New(idUsuario As Integer)
-
-        ' This call is required by the designer.
         InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
         Me.idUsuario = idUsuario
     End Sub
 
     Private Sub Obtener(idUsuario As Integer)
+        Dim caja As New MensajeCaja
         Try
-            Dim caja As MensajeCaja
             Dim neg As New Negocio.NPersona
             Dim persona As Entidades.Persona = neg.Obtener(idUsuario)
-
             If (persona IsNot Nothing) Then
                 IdPersonaLabel.Text = persona.IdPersona
                 IdUsuarioLabel.Text = persona.IdUsuario
@@ -26,12 +21,11 @@
                 DomicilioTextBox.Text = persona.Domicilio
                 TelefonoTextBox.Text = persona.Telefono
             Else
-                caja = New MensajeCaja("Error al obtener los datos de la persona", vbOKOnly + vbCritical, "Persona no encontrada")
-                caja.ShowDialog()
+                caja.MostrarMensaje("Error al obtener los datos de la persona", vbOKOnly + vbCritical, "Persona no encontrada")
             End If
             Me.Limpiar()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
     End Sub
 
@@ -57,13 +51,9 @@
         Me.Obtener(idUsuario)
     End Sub
 
-    Private Sub CancelarButton_Click(sender As Object, e As EventArgs) Handles CancelarButton.Click
-        Me.Close()
-    End Sub
-
     Private Sub ActualizarButton_Click(sender As Object, e As EventArgs) Handles ActualizarButton.Click
+        Dim caja As New MensajeCaja
         Try
-            Dim caja As MensajeCaja
             If (EmailTextBox.Text <> "" And ClaveTextBox.Text <> "") Then
                 Dim neg As New Negocio.NPersona
                 Dim persona As Entidades.Persona = Me.LeerPersona()
@@ -72,19 +62,20 @@
                 clave = ClaveTextBox.Text
 
                 If (neg.Actualizar(persona, email, clave)) Then
-                    caja = New MensajeCaja("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
-                    caja.ShowDialog()
+                    caja.MostrarMensaje("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
                 Else
-                    caja = New MensajeCaja("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización incorrecta")
-                    caja.ShowDialog()
+                    caja.MostrarMensaje("No se ha podido actualizar", vbOKOnly + vbCritical, "Actualización incorrecta")
                 End If
                 Me.Obtener(idUsuario)
             Else
-                caja = New MensajeCaja("Rellene todos los campos obligatorios", vbOKOnly + vbInformation, "Campos incompletos")
-                caja.ShowDialog()
+                caja.MostrarMensaje("Rellene todos los campos obligatorios", vbOKOnly + vbInformation, "Campos incompletos")
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            caja.MostrarMensaje(ex.Message)
         End Try
+    End Sub
+
+    Private Sub CancelarButton_Click(sender As Object, e As EventArgs) Handles CancelarButton.Click
+        Me.Close()
     End Sub
 End Class

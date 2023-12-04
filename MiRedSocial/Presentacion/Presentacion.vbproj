@@ -98,10 +98,10 @@
     <Compile Include="CajaMensaje.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearPublicacionForm.Designer.vb">
-      <DependentUpon>CrearPublicacionForm.vb</DependentUpon>
+    <Compile Include="PublicacionForm.Designer.vb">
+      <DependentUpon>PublicacionForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="CrearPublicacionForm.vb">
+    <Compile Include="PublicacionForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.vb">
@@ -169,8 +169,8 @@
     <EmbeddedResource Include="CajaMensaje.resx">
       <DependentUpon>CajaMensaje.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearPublicacionForm.resx">
-      <DependentUpon>CrearPublicacionForm.vb</DependentUpon>
+    <EmbeddedResource Include="PublicacionForm.resx">
+      <DependentUpon>PublicacionForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>

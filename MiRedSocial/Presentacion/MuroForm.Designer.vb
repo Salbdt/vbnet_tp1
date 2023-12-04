@@ -23,6 +23,9 @@ Partial Class MuroForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PublicacionPanel = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.IdPublicacionLabel = New System.Windows.Forms.Label()
+        Me.BorrarPublicacionButton = New System.Windows.Forms.Button()
         Me.FechaLabel = New System.Windows.Forms.Label()
         Me.ImagenPictureBox = New System.Windows.Forms.PictureBox()
         Me.RolLabel = New System.Windows.Forms.Label()
@@ -31,6 +34,7 @@ Partial Class MuroForm
         Me.AvatarPictureBox = New System.Windows.Forms.PictureBox()
         Me.CrearPublicacionButton = New System.Windows.Forms.Button()
         Me.PublicacionesPanel = New System.Windows.Forms.Panel()
+        Me.CantidadPublicacionesLabel = New System.Windows.Forms.Label()
         Me.PublicacionPanel.SuspendLayout()
         CType(Me.ImagenPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AvatarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,7 +45,11 @@ Partial Class MuroForm
         '
         Me.PublicacionPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PublicacionPanel.BackColor = System.Drawing.Color.Snow
         Me.PublicacionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PublicacionPanel.Controls.Add(Me.Button1)
+        Me.PublicacionPanel.Controls.Add(Me.IdPublicacionLabel)
+        Me.PublicacionPanel.Controls.Add(Me.BorrarPublicacionButton)
         Me.PublicacionPanel.Controls.Add(Me.FechaLabel)
         Me.PublicacionPanel.Controls.Add(Me.ImagenPictureBox)
         Me.PublicacionPanel.Controls.Add(Me.RolLabel)
@@ -51,9 +59,46 @@ Partial Class MuroForm
         Me.PublicacionPanel.Location = New System.Drawing.Point(10, 10)
         Me.PublicacionPanel.Margin = New System.Windows.Forms.Padding(5)
         Me.PublicacionPanel.Name = "PublicacionPanel"
-        Me.PublicacionPanel.Size = New System.Drawing.Size(808, 178)
+        Me.PublicacionPanel.Size = New System.Drawing.Size(808, 190)
         Me.PublicacionPanel.TabIndex = 2
         Me.PublicacionPanel.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Button1.Location = New System.Drawing.Point(65, 154)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(58, 26)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Editar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'IdPublicacionLabel
+        '
+        Me.IdPublicacionLabel.AutoSize = True
+        Me.IdPublicacionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.IdPublicacionLabel.Location = New System.Drawing.Point(4, 3)
+        Me.IdPublicacionLabel.Name = "IdPublicacionLabel"
+        Me.IdPublicacionLabel.Size = New System.Drawing.Size(19, 15)
+        Me.IdPublicacionLabel.TabIndex = 3
+        Me.IdPublicacionLabel.Text = "ID"
+        Me.IdPublicacionLabel.Visible = False
+        '
+        'BorrarPublicacionButton
+        '
+        Me.BorrarPublicacionButton.BackColor = System.Drawing.Color.Tomato
+        Me.BorrarPublicacionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BorrarPublicacionButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BorrarPublicacionButton.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.BorrarPublicacionButton.Location = New System.Drawing.Point(6, 154)
+        Me.BorrarPublicacionButton.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
+        Me.BorrarPublicacionButton.Name = "BorrarPublicacionButton"
+        Me.BorrarPublicacionButton.Size = New System.Drawing.Size(58, 26)
+        Me.BorrarPublicacionButton.TabIndex = 12
+        Me.BorrarPublicacionButton.Text = "Borrar"
+        Me.BorrarPublicacionButton.UseVisualStyleBackColor = False
         '
         'FechaLabel
         '
@@ -70,7 +115,7 @@ Partial Class MuroForm
         '
         Me.ImagenPictureBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ImagenPictureBox.Location = New System.Drawing.Point(633, 3)
+        Me.ImagenPictureBox.Location = New System.Drawing.Point(633, 9)
         Me.ImagenPictureBox.Name = "ImagenPictureBox"
         Me.ImagenPictureBox.Size = New System.Drawing.Size(170, 170)
         Me.ImagenPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -96,7 +141,7 @@ Partial Class MuroForm
         Me.TextoLabel.Location = New System.Drawing.Point(149, 23)
         Me.TextoLabel.Name = "TextoLabel"
         Me.TextoLabel.Padding = New System.Windows.Forms.Padding(3)
-        Me.TextoLabel.Size = New System.Drawing.Size(478, 150)
+        Me.TextoLabel.Size = New System.Drawing.Size(478, 156)
         Me.TextoLabel.TabIndex = 2
         Me.TextoLabel.Text = "Mensaje de la publicación"
         '
@@ -144,6 +189,17 @@ Partial Class MuroForm
         Me.PublicacionesPanel.Padding = New System.Windows.Forms.Padding(5)
         Me.PublicacionesPanel.Size = New System.Drawing.Size(830, 419)
         Me.PublicacionesPanel.TabIndex = 11
+        Me.PublicacionesPanel.Visible = False
+        '
+        'CantidadPublicacionesLabel
+        '
+        Me.CantidadPublicacionesLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CantidadPublicacionesLabel.Location = New System.Drawing.Point(642, 17)
+        Me.CantidadPublicacionesLabel.Name = "CantidadPublicacionesLabel"
+        Me.CantidadPublicacionesLabel.Size = New System.Drawing.Size(200, 26)
+        Me.CantidadPublicacionesLabel.TabIndex = 12
+        Me.CantidadPublicacionesLabel.Text = "Publicaciones:"
+        Me.CantidadPublicacionesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'MuroForm
         '
@@ -151,6 +207,7 @@ Partial Class MuroForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(854, 485)
+        Me.Controls.Add(Me.CantidadPublicacionesLabel)
         Me.Controls.Add(Me.PublicacionesPanel)
         Me.Controls.Add(Me.CrearPublicacionButton)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -159,6 +216,7 @@ Partial Class MuroForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MuroForm"
         Me.PublicacionPanel.ResumeLayout(False)
+        Me.PublicacionPanel.PerformLayout()
         CType(Me.ImagenPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AvatarPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PublicacionesPanel.ResumeLayout(False)
@@ -174,4 +232,8 @@ Partial Class MuroForm
     Friend WithEvents CrearPublicacionButton As Button
     Friend WithEvents PublicacionesPanel As Panel
     Friend WithEvents FechaLabel As Label
+    Friend WithEvents BorrarPublicacionButton As Button
+    Friend WithEvents IdPublicacionLabel As Label
+    Friend WithEvents CantidadPublicacionesLabel As Label
+    Friend WithEvents Button1 As Button
 End Class
