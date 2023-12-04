@@ -14,13 +14,10 @@ go
 create procedure publicaciones_obtener
 @id_publicacion integer
 as
-	select p.id_publicacion, p.id_usuario, p.texto, p.imagen,
-		p.privacidad, p.fecha, p.fecha_modificacion,
-		u.nombre_usuario as usuario, u.avatar, r.nombre as rol
-	from publicaciones p 
-		inner join usuarios u on p.id_usuario = u.id_usuario
-		inner join roles r on u.id_rol = r.id_rol
-	where p.id_usuario = @id_usuario
+	select id_publicacion, id_usuario, texto, imagen,
+		privacidad, fecha, fecha_modificacion
+	from publicaciones
+	where id_publicacion = @id_publicacion
 	order by fecha desc;
 go
 
