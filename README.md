@@ -17,7 +17,7 @@ Funcionalidades de la aplicación
 - Solo vemos nuestras publicaciones, podemos crear, editar y eliminar publicaciones.
 - La publicación puede ser solo texto o tener una imagen.
 
-Funcionalidades no alcanzadas
+Funcionalidades no alcanzadas por tiempo
 - Sistema de amigos o seguimiento para poder ver el muro de otra persona
 	- Seguir o añadir amigo con notifiación o mensaje privado para confirmar
 	- Bloquear usuario para que no pueda ver mis publicaciones
