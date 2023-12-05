@@ -1,3 +1,6 @@
+use redsocial_prueba;
+go
+
 -- Procedimiento Listar
 create procedure publicaciones_listar
 as

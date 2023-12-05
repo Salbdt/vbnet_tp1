@@ -1,3 +1,6 @@
+create database redsocial_prueba;
+go
+
 use redsocial_prueba;
 go
 
@@ -49,7 +52,7 @@ create table publicaciones(
 go
 
 -- Esto fue para corregir algo en la tabla, en este script no es necesario (a menos que se prefiera mejorar el nombre de la restricción)
-alter table publicaciones add constraint df_privacidad default 'Pública' for privacidad;
+-- alter table publicaciones add constraint df_privacidad default 'Pública' for privacidad;
 
 create table mensajes_privados(
 	id_mensaje integer primary key identity,
@@ -66,10 +69,10 @@ go
 --------------------------------------------------
 
 create table contactos(
-	id_contacto integer primary key identity,
+	id_contacto integer primary key identity, -- La clave primaria podría ser la convinación de contacto uno y dos
 	id_contacto_uno integer not null,
 	id_contacto_dos integer not null,
-	tipo varchar(30) not null default ('Amigo'), -- Amigo, Bloqueado
+	tipo varchar(30) not null default 'Amigo', -- Amigo, Bloqueado
 	fecha datetime not null,
 	fecha_modificacion datetime not null,
 );
