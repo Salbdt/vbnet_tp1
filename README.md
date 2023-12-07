@@ -1,11 +1,15 @@
 # vbnet_tp1
 VB.NET, Windows Forms, SQL Server, CRUD
 
+--------------------------------------------------
+
 - Para crear la BD ejecutar los scripts de la carpeta "_sql"
 
 - Para conectar a la BD
 	- Renombrar ConexionExample.vb por Conexion.vb
 	- Poner los nombres correctos de la BD, Usuario y Clave del servidor SQL Server
+
+--------------------------------------------------
 
 Funcionalidades de la aplicación
 - Podemos registrarnos, iniciar y cerrar sesión.
@@ -16,6 +20,8 @@ Funcionalidades de la aplicación
 - Tenemos un muro personal de publicaciones (todavía no se implementó la parte de amigos)
 - Solo vemos nuestras publicaciones, podemos crear, editar y eliminar publicaciones.
 - La publicación puede ser solo texto o tener una imagen.
+
+--------------------------------------------------
 
 Funcionalidades no alcanzadas por tiempo
 - Sistema de amigos o seguimiento para poder ver el muro de otra persona
